@@ -47,7 +47,7 @@ sugiro conperter a strin para Number */
 
 // Exercicio de escrita de codigo 1-----------------------------------------
 
-let idadeUsuario = prompt("Digite sua idade :")
+/*let idadeUsuario = prompt("Digite sua idade :")
 let idadeAmigo = prompt("Qual a idade do seu melhor amigo")
 let idadeMaior = Number(idadeUsuario) >= Number(idadeAmigo) 
 let idadeDiferenca = idadeUsuario - idadeAmigo
@@ -70,7 +70,7 @@ let horasUsuario = diaUsuario * 24
 
 console.log(idadeUsuario1 * 12 )
 console.log(diaUsuario)
-console.log(horasUsuario)
+console.log(horasUsuario)*/
 
 
 // Exercicio de escrita de codigo 4 --------------------------------------
@@ -79,10 +79,10 @@ let numero1 = prompt("Digite um valor :")
 let numero2 = prompt("Digite outro valor :")
 let num1 = Number(numero1)
 let num2 = Number(numero2)
-let maior = Boolean(num1 > num2)
-let igual = Boolean(num1 == num2)
-let divisivelSegundo = Boolean(num1 % num2 == 0)
-let divisivelPrimeiro = Boolean(num2 % num1 == 0)
+let maior = (num1 > num2)
+let igual = (num1 == num2)
+let divisivelSegundo = (num1 % num2 == 0)
+let divisivelPrimeiro = (num2 % num1 == 0)
 
 console.log("O primeiro numero é maior que o segundo :", maior )
 console.log("O primeiro numero e igual ao segundo :",igual)
