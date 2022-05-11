@@ -47,7 +47,7 @@ sugiro conperter a strin para Number */
 
 // Exercicio de escrita de codigo 1-----------------------------------------
 
-/*let idadeUsuario = prompt("Digite sua idade :")
+let idadeUsuario = prompt("Digite sua idade :")
 let idadeAmigo = prompt("Qual a idade do seu melhor amigo")
 let idadeMaior = Number(idadeUsuario) >= Number(idadeAmigo) 
 let idadeDiferenca = idadeUsuario - idadeAmigo
@@ -70,7 +70,7 @@ let horasUsuario = diaUsuario * 24
 
 console.log(idadeUsuario1 * 12 )
 console.log(diaUsuario)
-console.log(horasUsuario)*/
+console.log(horasUsuario)
 
 
 // Exercicio de escrita de codigo 4 --------------------------------------
