@@ -117,8 +117,8 @@ function divisao(val1,val2){
     let resposta = val1 / val2
     return resposta
 }
-let val1 = 9
-let val2 = 8
+let val1 = Number(prompt("Digte um valor"))
+let val2 = Number(prompt("Digte outro valor"))
 
 console.log(`Numeros inseridos ${val1} e ${val2} 
 Soma: ${somar(val1,val2)}
