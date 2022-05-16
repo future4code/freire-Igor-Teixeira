@@ -133,6 +133,7 @@ function checaRenovacaoRG() {
 
 }
 
+
 // EXERCÍCIO 14
 function checaAnoBissexto(ano) {
 
