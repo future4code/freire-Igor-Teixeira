@@ -200,6 +200,7 @@ Nome do cliente: ${nome}
 Tipo de jogo: ${novoTipoJogo}
 Nome etapa : ${novaEtapa}
 Categoria : ${categoria}
+Quantidade de ingresso : ${quantidade}
 -------valores------
 valor do ingresso:${moeda} ${valoringresso}
 Valor total:${moeda} ${valoringresso*quantidade}`)
@@ -209,6 +210,7 @@ Nome do cliente : ${nome}
 Tipo de jogo : ${novoTipoJogo}
 Nome etapa : ${novaEtapa}
 Categoria : ${categoria}
+Quantidade de ingresso : ${quantidade}
 -------valores------
 valor do ingresso: ${moeda} ${valoringresso}
 Valor total: ${moeda} ${valorInt}`)
