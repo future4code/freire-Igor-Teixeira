@@ -127,4 +127,92 @@ if (filmeGenero === "FANTASIA" && filmeValor < 15 ){
 
 //Desafios --------------------------------- 
 
+// Exercicio 2
+
+let nome = prompt("Qual seu nome completo?").toUpperCase()
+let tipoJogo = prompt("qual tipo de jogo [DO - IN").toUpperCase()
+let etapa = prompt("Qual etapa do jogo ? [SF-DT-FI]").toUpperCase()
+let categoria = Number(prompt("qual categoria [1 - 2 - 3 ou 4"))
+let quantidade = Number(prompt("Qual a quantidade de ingressos ?"))
+
+let valoringresso 
+
+if( etapa == "SF" ){
+    if (categoria == 1){
+        valoringresso = 1320.00
+    }else if (categoria == 2){
+        valoringresso = 880.00
+    }else if (categoria == 3){
+        valoringresso = 550.00
+    }else{(categoria == 4)
+        valoringresso = 220.00
+    }
+}else if (etapa == "DT"){
+    if (categoria == 1){
+        valoringresso = 660.00
+    }else if (categoria == 2){
+        valoringresso = 440.00
+    }else if (categoria == 3){
+        valoringresso = 330.00
+    }else{(categoria == 4)
+        valoringresso = 170.00
+    }
+}else if(etapa == "FI"){
+    if (categoria == 1){
+        valoringresso = 1980.00
+    }else if (categoria == 2){
+        valoringresso = 1320.00
+    }else if (categoria == 3){
+        valoringresso = 880.00
+    }else{(categoria == 4)
+        valoringresso = 330.00
+
+}
+}
+
+let novaEtapa 
+if(etapa =="SF"){
+    novaEtapa = "Semi-final"
+}else if(etapa == "DT"){
+    novaEtapa = "Terceiro lugar"
+}else if(etapa == "FI"){
+    novaEtapa = "Final"
+}
+
+
+
+
+
+let novoTipoJogo 
+let moeda 
+let valorInt = (valoringresso*4.10)*quantidade
+
+if(tipoJogo =="DO"){
+    novoTipoJogo = "Nascional"
+    moeda = "R$"
+}else if(tipoJogo == "IN"){
+    novoTipoJogo = "internacional"
+    moeda = "U$"
+}
+if(tipoJogo="DO"){
+    console.log(`---Dados de compra----
+Nome do cliente: ${nome}
+Tipo de jogo: ${novoTipoJogo}
+Nome etapa : ${novaEtapa}
+Categoria : ${categoria}
+-------valores------
+valor do ingresso:${moeda} ${valoringresso}
+Valor total:${moeda} ${valoringresso*quantidade}`)
+}else if(tipoJogo =="IN"){
+    console.log(`---Dados de compra----
+Nome do cliente : ${nome}
+Tipo de jogo : ${novoTipoJogo}
+Nome etapa : ${novaEtapa}
+Categoria : ${categoria}
+-------valores------
+valor do ingresso: ${moeda} ${valoringresso}
+Valor total: ${moeda} ${valorInt}`)
+
+}
+
 
