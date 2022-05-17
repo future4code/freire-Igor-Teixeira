@@ -61,8 +61,7 @@ const pessoaExercicio = {
 }
 // a)
 function apelidoPessoa(pessoa){
-    const novaPessoa = {...pessoa}
-    return console.log(`Meu nome e ${novaPessoa.nome} mas pode me chamar de ${novaPessoa.apelido[0]},${novaPessoa.apelido[1]} ou ${novaPessoa.apelido[2]}.`)
+    return console.log(`Meu nome e ${pessoa.nome} mas pode me chamar de ${pessoa.apelido[0]},${pessoa.apelido[1]} ou ${pessoa.apelido[2]}.`)
 
 }
 apelidoPessoa(pessoaExercicio) 
@@ -93,12 +92,11 @@ const dadosPessoa2 = {
 }
 
 function arrpessoa(pessoa){
-    const novaPessoa = {...dadosPessoa1,...dadosPessoa2,}
+    const novaPessoa = pessoa
     const arrNovaPessoa = [novaPessoa.nome,novaPessoa.nome.length,novaPessoa.idade,novaPessoa.proficao,novaPessoa.proficao.length]
     return arrNovaPessoa
 }
 console.log(arrpessoa(dadosPessoa1))
-
 
 //exercicio 3 -----------------------------------------------------------------
 
@@ -120,16 +118,12 @@ const fruta3 ={
 };
 
 function compras(fruta){
-    const novaFrutas = {
-        ...fruta1,
-        ...fruta2,
-        ...fruta3
-    }
+    const novaFrutas = fruta
     carrinho = [fruta1,fruta2,fruta3]
 
-    return carrinho
+    return carrinho 
 }
-console.log(compras(carrinho.fruta1))
+console.log(compras(carrinho))
 
 
 //  Desafiooo ----------------------------------------------
@@ -185,4 +179,4 @@ function sacolao (fruta1,fruta2,fruta3){
     
    return frutadisp
 }
-console.log(sacolao(fruta3))
+console.log(sacolao(fruta2)) 
