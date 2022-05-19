@@ -52,7 +52,11 @@ console.log(minhaFuncao(pessoa, "backender"))   false
 console.log(minhaFuncao(pessoa, "altura"))  undefined  */
 
 
+<<<<<<< HEAD
+//--------------------------EXERCICIOS DE ESCRITA DE CODIGO-----------------------------------
+=======
 //---------EXERCICIOS DE ESCRITA DE CODIGO--------------
+>>>>>>> 8b38b3750ff3e2c72c7bda7a769947ede20bd75b
 
 const pessoaExercicio = {
     nome: "Lorenzo",
@@ -61,7 +65,12 @@ const pessoaExercicio = {
 }
 // a)
 function apelidoPessoa(pessoa){
+<<<<<<< HEAD
+    const novaPessoa = {...pessoa}
+    return console.log(`Meu nome e ${novaPessoa.nome} mas pode me chamar de ${novaPessoa.apelido[0]},${novaPessoa.apelido[1]} ou ${novaPessoa.apelido[2]}.`)
+=======
     return console.log(`Meu nome e ${pessoa.nome} mas pode me chamar de ${pessoa.apelido[0]},${pessoa.apelido[1]} ou ${pessoa.apelido[2]}.`)
+>>>>>>> 8b38b3750ff3e2c72c7bda7a769947ede20bd75b
 
 }
 apelidoPessoa(pessoaExercicio) 
@@ -76,7 +85,11 @@ const pessoaExercicio2 = {
 apelidoPessoa(pessoaExercicio2)
 
 
+<<<<<<< HEAD
+// exercicio 2 ----------------------------------------------------------
+=======
 // exercicio 2 ------------------------------------------------
+>>>>>>> 8b38b3750ff3e2c72c7bda7a769947ede20bd75b
 
 const dadosPessoa1 = {
     nome: "Marcos",
@@ -91,12 +104,23 @@ const dadosPessoa2 = {
 
 }
 
+<<<<<<< HEAD
+function arrpessoa(dadosPessoa1,dadosPessoa2){
+    const novaPessoa = {...dadosPessoa1,
+        ...dadosPessoa2,}
+    const arrNovaPessoa = [novaPessoa.nome,novaPessoa.nome.length,novaPessoa.idade,novaPessoa.proficao,novaPessoa.proficao.length]
+    return arrNovaPessoa
+}
+console.log(arrpessoa(dadosPessoa2))
+
+=======
 function arrpessoa(pessoa){
     const novaPessoa = pessoa
     const arrNovaPessoa = [novaPessoa.nome,novaPessoa.nome.length,novaPessoa.idade,novaPessoa.proficao,novaPessoa.proficao.length]
     return arrNovaPessoa
 }
 console.log(arrpessoa(dadosPessoa1))
+>>>>>>> 8b38b3750ff3e2c72c7bda7a769947ede20bd75b
 
 //exercicio 3 -----------------------------------------------------------------
 
@@ -118,6 +142,21 @@ const fruta3 ={
 };
 
 function compras(fruta){
+<<<<<<< HEAD
+    const novaFrutas = {
+        ...fruta1,
+        ...fruta2,
+        ...fruta3
+    }
+    carrinho = [fruta1,fruta2,fruta3]
+
+    return carrinho
+}
+console.log(compras(carrinho.fruta1))
+
+
+//  Desafiooo ----------------------------------------------------------
+=======
     const novaFrutas = fruta
     carrinho = [fruta1,fruta2,fruta3]
 
@@ -127,6 +166,7 @@ console.log(compras(carrinho))
 
 
 //  Desafiooo ----------------------------------------------
+>>>>>>> 8b38b3750ff3e2c72c7bda7a769947ede20bd75b
 
 function usuario (){
     let nome = prompt("Qual seu nome ?")
@@ -143,7 +183,11 @@ function usuario (){
 }
 usuario()
 
+<<<<<<< HEAD
+//desafio 2 ---------------------------------------------------------------
+=======
 //desafio 2 --------------------------
+>>>>>>> 8b38b3750ff3e2c72c7bda7a769947ede20bd75b
 
 
 
@@ -179,4 +223,8 @@ function sacolao (fruta1,fruta2,fruta3){
     
    return frutadisp
 }
+<<<<<<< HEAD
+console.log(sacolao(fruta3))
+=======
 console.log(sacolao(fruta2)) 
+>>>>>>> 8b38b3750ff3e2c72c7bda7a769947ede20bd75b
