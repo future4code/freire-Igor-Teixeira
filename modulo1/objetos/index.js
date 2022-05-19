@@ -52,24 +52,25 @@ console.log(minhaFuncao(pessoa, "backender"))   false
 console.log(minhaFuncao(pessoa, "altura"))  undefined  */
 
 
- condicionais
 //--------------------------EXERCICIOS DE ESCRITA DE CODIGO-----------------------------------
-=======
+
 //---------EXERCICIOS DE ESCRITA DE CODIGO--------------
 
 
-const pessoaExercicio = {
+
+= {
     nome: "Lorenzo",
     apelido:["lolo","Loh","Diambou flay"]
 
 }
 // a)
 function apelidoPessoa(pessoa){
-condicionais
+
     const novaPessoa = {...pessoa}
     return console.log(`Meu nome e ${novaPessoa.nome} mas pode me chamar de ${novaPessoa.apelido[0]},${novaPessoa.apelido[1]} ou ${novaPessoa.apelido[2]}.`)
-=======
+
     return console.log(`Meu nome e ${pessoa.nome} mas pode me chamar de ${pessoa.apelido[0]},${pessoa.apelido[1]} ou ${pessoa.apelido[2]}.`)
+
 
 
 }
@@ -85,10 +86,6 @@ const pessoaExercicio2 = {
 apelidoPessoa(pessoaExercicio2)
 
 
- condicionais
-// exercicio 2 ----------------------------------------------------------
-
-// exercicio 2 ------------------------------------------------
 
 
 const dadosPessoa1 = {
@@ -104,7 +101,6 @@ const dadosPessoa2 = {
 
 }
 
-condicionais
 function arrpessoa(dadosPessoa1,dadosPessoa2){
     const novaPessoa = {...dadosPessoa1,
         ...dadosPessoa2,}
@@ -113,13 +109,14 @@ function arrpessoa(dadosPessoa1,dadosPessoa2){
 }
 console.log(arrpessoa(dadosPessoa2))
 
-=======
+
 function arrpessoa(pessoa){
     const novaPessoa = pessoa
     const arrNovaPessoa = [novaPessoa.nome,novaPessoa.nome.length,novaPessoa.idade,novaPessoa.proficao,novaPessoa.proficao.length]
     return arrNovaPessoa
 }
 console.log(arrpessoa(dadosPessoa1))
+
 
 
 //exercicio 3 -----------------------------------------------------------------
@@ -142,7 +139,7 @@ const fruta3 ={
 };
 
 function compras(fruta){
-condicionais
+
     const novaFrutas = {
         ...fruta1,
         ...fruta2,
@@ -156,7 +153,7 @@ console.log(compras(carrinho.fruta1))
 
 
 //  Desafiooo ----------------------------------------------------------
-=======
+
     const novaFrutas = fruta
     carrinho = [fruta1,fruta2,fruta3]
 
@@ -166,6 +163,7 @@ console.log(compras(carrinho))
 
 
 //  Desafiooo ----------------------------------------------
+
 
 
 function usuario (){
@@ -183,10 +181,11 @@ function usuario (){
 }
 usuario()
 
-condicionais
+
 //desafio 2 ---------------------------------------------------------------
-=======
+
 //desafio 2 --------------------------
+
 
 
 
@@ -223,7 +222,7 @@ function sacolao (fruta1,fruta2,fruta3){
     
    return frutadisp
 }
- condicionais
 console.log(sacolao(fruta3))
-=======
+
 console.log(sacolao(fruta2)) 
+
