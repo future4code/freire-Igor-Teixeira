@@ -73,8 +73,9 @@
 
 //a)
  const novoArray = pets.map((item) => {
-    console.log(item.nome)
+    return item.nome
  }) 
+ console.log(novoArray)
 
 //b)
 
@@ -91,6 +92,7 @@ console.log(petSalsicha)
 const petPoodles = pets.filter((item)=>{
     return item.raca === "Poodle"    
 })
+
 
 console.log(petPoodles)
 let mensagem = petPoodles.map((item) =>{
@@ -113,14 +115,14 @@ const produtos = [
  ]
 //a)
  const nomeProdutos = produtos.map((item) => {
-     console.log(item.nome)
+     return item.nome
  })
-
+console.log(nomeProdutos)
  //b)
 const descontoProdutos = produtos.map((item)=>{
-    console.log(item.nome,item.preco*0.95)
+    return `${item.nome} = valor :${item.preco*0.95}`
 })
-
+console.log(descontoProdutos)
 //c)
 const bebidas = produtos.filter((item)=>{
     return item.categoria === "Bebidas"
@@ -154,7 +156,7 @@ const pokemons = [
 
 //a)
 
-const nomePokemon = pokemons.map((item) =>{
+const nomePokemon = pokemons.map((item,) =>{
     return item.nome
 })
 console.log(nomePokemon.sort())
