@@ -33,10 +33,3 @@ if(usuario === false){
    }else{
       console.log("O usario venceu")
    }
-     
-      
-   
-
-
-
-
