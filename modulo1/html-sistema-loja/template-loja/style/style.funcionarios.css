@@ -1,0 +1,48 @@
+header{
+    background-image: linear-gradient(#26d5a3,#008A63,#066b4e,#2e3131);
+    text-align: center;
+    font: italic,bold,16px,'Bebas Neue',sans-serif;
+    color: white;
+    min-height: 150px;
+    padding-top: 30px;
+}
+header h1{
+    color: white;
+}
+header p{
+    color: white;
+    font-size: 20px;
+}
+nav{
+    height: 30px;
+    background-color: #008A63;
+
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+
+}
+nav > a:hover{
+    background-color: #309070;
+}
+
+
+h2{
+    text-align: center;
+    color: #008A63;
+}
+
+ol{
+    background-color: #2e3131d7;
+}
+
+li{
+    padding: 5px;
+    margin: auto;
+    color: white;
+
+}
