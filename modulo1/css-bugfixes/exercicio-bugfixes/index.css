@@ -43,6 +43,7 @@ div img {
     background: rgba(0, 0, 0, 0);
 }
 
+
 .botao-amarelo {
     background-color: #ffaf43;
     width: 250px;
@@ -142,7 +143,13 @@ td img{
     margin-top: 20px;
     height: 100px;
 }
+.container-do-search img:hover{
+    opacity: 50%;
+}
+.container-do-search img:active{
+    opacity: 100%;
 
+}
 
 #back-button {
     display: block;
