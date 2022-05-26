@@ -34,7 +34,7 @@ div>p:first-child {
 }
 
 div img {
-    background: black;
+    background: rgba(0, 0, 0, 0);
 }
 
 .botao-amarelo {
@@ -78,6 +78,7 @@ div img {
     padding: 15px 0px;
 }
 
+
 #container-para-comprar {
     background-color: #e7eb90;
 }
@@ -112,7 +113,7 @@ td button {
     width: 150px;
     height: 30px;
     border-radius: 5px;
-    color: black;
+    color: rgba(0, 0, 0, 0.948);
 }
 
 
