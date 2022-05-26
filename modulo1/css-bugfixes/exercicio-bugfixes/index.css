@@ -49,7 +49,10 @@ div img {
 .botao-amarelo:hover {
     background-color: #c44f00;
 }
+.botao-amarelo:active{
+    background-color: red;
 
+}
 .container {
     height: 500px;
     text-align: center;
@@ -115,7 +118,12 @@ td button {
     border-radius: 5px;
     color: rgba(0, 0, 0, 0.948);
 }
-
+td button:hover {
+    background-color: #c34806;
+}
+td button:active{
+    background-color: #fceded;
+}
 
 td img{
     width: 30px;
@@ -137,5 +145,8 @@ td img{
 }
 
 #back-button:hover {
-    background-color: #635a3d
+    background-color: #c34806
+}
+#back-button:active{
+    background-color: #c10404;
 }
