@@ -9,6 +9,9 @@
     padding: 0;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+
 h2 {
     background-color: #fe7e02;
     padding: 10px 5px 10px 5px;
@@ -17,7 +20,7 @@ h2 {
 }
 
 input {
-    border: 0px ;
+    border: none ;
     border-bottom: 2px solid rgb(116, 115, 115);
     height: 20px;
     width: 500px;
@@ -109,6 +112,7 @@ div:last-child {
 }
 
 table {
+    font-family: 'Roboto', sans-serif;
     padding: auto;
     margin: auto;
     width: 60%;
@@ -138,6 +142,9 @@ td img{
 
 
 #back-button {
+    display: block;
+    margin: auto;
+    text-decoration-line: none;
     background-color: white;
     width: 100px;
     height: 20px;
