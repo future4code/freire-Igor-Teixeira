@@ -1,0 +1,172 @@
+/** 
+  *
+  *  ESTILOS GERAIS 
+  *
+  **/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+
+h2 {
+    background-color: #fe7e02;
+    padding: 10px 5px 10px 5px;
+    color: white;
+    text-align: center;
+}
+
+input {
+    border: none ;
+    border-bottom: 2px solid rgb(116, 115, 115);
+    height: 20px;
+    width: 500px;
+}
+
+button:focus {
+    color: white;
+}
+
+img {
+    width: 100px;
+}
+
+div>p:first-child {
+    display: inline;
+}
+
+div img {
+    width:  20px;
+    background: rgba(0, 0, 0, 0);
+}
+
+
+.botao-amarelo {
+    background-color: #ffaf43;
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 20px;
+    color: white;
+}
+
+.botao-amarelo:hover {
+    background-color: #c44f00;
+}
+.botao-amarelo:active{
+    background-color: red;
+
+}
+.container {
+    height: 500px;
+    text-align: center;
+}
+
+
+.icone {
+    height: 15px;
+}
+
+
+/** 
+  *
+  *  ESTILOS HOME 
+  *
+  **/
+
+#container-de-descricao {
+    display: block;
+    padding-top: 50px;
+    background-color: #2274a5;
+    color: rgb(226, 214, 214);
+    
+}
+
+#container-de-descricao>ol {
+    text-align: center;
+    display:inline-block;
+
+}
+
+
+#container-para-comprar {
+    background-color: #e7eb90;
+}
+
+#container-para-comprar>p {
+    display: block;
+    color: #c44f00;
+    padding: 100px 0;
+    font-size: 60px;
+}
+
+
+/**
+  *
+  *  ESTILOS COMPRAR 
+  *
+  **/
+
+
+div:last-child {
+    text-align: center;
+}
+
+table {
+    font-family: 'Roboto', sans-serif;
+    padding: auto;
+    margin: auto;
+    width: 60%;
+}
+
+td button {
+    background-color: #fadf63;
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    color: rgba(0, 0, 0, 0.948);
+}
+td button:hover {
+    background-color: #c34806;
+}
+td button:active{
+    background-color: #fceded;
+}
+
+td img{
+    width: 30px;
+}
+.container-do-search {
+    margin-top: 20px;
+    height: 100px;
+}
+.container-do-search img:hover{
+    opacity: 50%;
+}
+.container-do-search img:active{
+    opacity: 100%;
+
+}
+
+#back-button {
+    display: block;
+    margin: auto;
+    text-decoration-line: none;
+    background-color: white;
+    width: 100px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 10px;
+    color: black;
+}
+
+#back-button:hover {
+    background-color: #c34806
+}
+#back-button:active{
+    background-color: #c10404;
+}
