@@ -43,25 +43,48 @@ header{
     transform: scale(1.5);
 }
 
-.projetos{
+
+
+
+#projetos{
     display: flex;
     justify-content: space-around;
-    padding-top: 15px;
-
-          
+    margin-top: 3em;
+         
 }
-.projetos div {
-    color: #05243C;
-    padding: 40px;
-    background-color: #85bfeb58;
-    width: 180px;
-    height: 500px;
-    border-radius: 5px;
+.back{
+    background-color: #2b95e5;
+    width: 25vw;
+    height: 60vh;
+
+}
+.back img{
+    width: 100%;
+}
+.front{
+    background-color: #450632;
+    width: 25vw;
+    height: 50vh;
     transition-property: background-color;
     transition-duration: 2s; 
 }
-.projetos div:hover{
-    background-color: #05243C;
+.front:hover{
+    background-color:#2b95e5 ;
+
 }
 
+
+footer{
+    bottom: 1em;
+    position: fixed;
+    width: 90%;
+    text-align: center;
+    
+ }
+ footer img {
+    width: 8vw;
+ }
+ footer img:hover{
+    transform: scale(1.5);
+ }
 
