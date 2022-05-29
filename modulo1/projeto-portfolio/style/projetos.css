@@ -1,0 +1,67 @@
+
+
+body{
+    color:white;
+    animation: gradient 15s ease infinite;
+    background: linear-gradient(-45deg,#011523,#062a45,#042c4a,#2b95e5) no-repeat;
+    background-size:300% 300%;
+    justify-content: center;
+    height: 90vh;
+}
+@keyframes gradient {
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%; 
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
+
+header{
+    text-align: center;
+    padding-top: 20px;
+}
+.nav {
+    display: flex;
+    padding-top: 15px;
+    justify-content: space-evenly;  
+}
+.nav input{
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    background-color: #b8daf347;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+}
+.nav input:hover{
+    border: none;
+    background-color: #2b95e5;
+    transform: scale(1.5);
+}
+
+.projetos{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 15px;
+
+          
+}
+.projetos div {
+    color: #05243C;
+    padding: 40px;
+    background-color: #85bfeb58;
+    width: 180px;
+    height: 500px;
+    border-radius: 5px;
+    transition-property: background-color;
+    transition-duration: 2s; 
+}
+.projetos div:hover{
+    background-color: #05243C;
+}
+
+

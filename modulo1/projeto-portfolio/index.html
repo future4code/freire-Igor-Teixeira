@@ -1,59 +1,64 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portifólio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style/style.css">
 
 </head>
+
 <body>
     <header>
-        <h1>Igor Rodrigues </h1>
+        <h1>Desenvolvedor Front-End</h1>
+
     </header>
+    <div class="nav">
+        <a href="./index.html">
+        <input type="button" value="Home"></a>
+        <a href="./portifolio.html">
+        <input type="button" value="Portifólio"></a>
+        <a href="./projetos.html">
+        <input type="button" value="projetos"></a>
+    </div>
 
-    <nav>
-        <input type="button" value="Home">
-        <input type="button" value="Portifólio">
-        <input type="button" value="Projetos">
-        <input type="button" value="Entre em contato ">
-        
-    </nav>
-    <main>
-        <div id="container" >
-            
-            <div class="text">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ex tempore recusandae totam officiis est consequatur quibusdam, corrupti mollitia distinctio asperiores aspernatur maxime autem commodi et cumque nostrum libero possim.</p>
-                <label for="nome">Nome</label>
-                <input type="text">
-                <label for="email">Email</label>
-                <input type="text">
-                <label for="assunto">Assunto</label>
-                <input type="text">
-                
-                
-            </div>
+    <div id="apresentação">
 
-            <div class="foto">
-                <img src="./homemnonot.png" alt="">
-            </div>
+        <div>
+            <h2>&#60Igor</h2>
+            <h2 class="azul">Rodrigues</h2>
+            <h2>/&#62</h2>
         </div>
-        <div id="container-cards">
+        <div><img src="./imagens/globo.png" alt="imagem de um globo "></div>
 
-        <div class="cards">skill</div>
-        <div class="cards">skill</div>
-        <div class="cards">skill</div>
+    </div>
 
-        </div>
 
+    <div class="contato">
+        <div class="contato">
+            <label for="nome">Nome: <input type="nome" name="" id="nome"></label>
         
+        </div>
+        <div class="contato">
+            <label for="email">Email: <input type="email" ></label>
+        </div>
+        <div class="contato">
+            <label for="assunto"> Assunto: <input type="text" ></label>
+        </div>
+    </div>
 
-    </main>
-    <footer>
-        <p>Igor rodrigues</p>  
+
+
+    <footer id="rodape">
+        <p>Igor rodrigues</p>
+        <img src="./imagens/linkeofici.png" alt="logo linkedin">
+        <img src="./imagens/icon-email.png" alt="logo email">
+        <img src="./imagens/githubofici.png" alt="logo github">
     </footer>
 
-    
+
 </body>
+
 </html>

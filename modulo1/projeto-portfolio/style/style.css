@@ -1,0 +1,100 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    color: white;
+    background-image: url(../imagens/backgroud.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;  
+} 
+
+header{
+    text-align: center;
+    padding-top: 20px;
+}
+.nav {
+    display: flex;
+    padding-top: 15px;
+    justify-content: space-evenly;  
+}
+.nav input{
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    background-color: #b8daf347;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+}
+.nav input:hover{
+    border: none;
+    background-color: #2b95e5;
+    transform: scale(1.5);
+}
+
+#apresentação{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 40px;
+    width: 90vw;
+}
+@keyframes rotate{
+    from { transform: rotateZ(0deg)}
+    to {transform:rotateZ(360deg);}
+}
+
+#apresentação img {
+    animation: rotate 100s linear infinite;
+    width: 30vw; 
+}
+
+#apresentação h2 {
+    display: inline;
+    padding: 10px;
+    font-size: 6vw;
+}
+
+#aprsentação div{
+    display: flex;
+}
+
+.azul{
+    color: #2b95e5;
+}
+
+.contato{
+    display: flex;
+    padding: 15px;
+}
+    
+div label{
+    padding: 10px;
+    margin: auto;
+    border-radius: 5px;
+    background-color: #bdd8ed47;
+    
+}
+.contato input{
+    border: none;
+    border-bottom: solid;
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+ footer{
+    bottom: 10px;
+    position: fixed;
+    width: 90%;
+    text-align: center;
+ }
+ footer img {
+     padding-top: 10px;
+    width: 40px;
+ }
+ footer img:hover{
+    transform: scale(1.5);
+ }
