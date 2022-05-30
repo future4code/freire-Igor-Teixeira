@@ -1,0 +1,71 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+main{
+    display: flex;
+    background-color: white;
+    width: 100vw;
+    height: 90vh;
+}
+header{
+    background-color: mediumvioletred;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header h2{
+    padding-left: 10px;
+}
+header div {
+    display: flex;
+    padding: 10px;
+}
+
+header div img{
+    display: inline;
+    width: 20px;
+    height: 20px;
+}
+
+aside{
+    background-color: #f2d0e0;
+
+}
+aside img{
+    padding: 0 5px 5px 10px ;
+    width: 18px;
+}
+.nav{
+    width: 230px;
+    display:flex ;
+    justify-content: space-between
+}
+section div{
+    display: flex;
+    padding: 2px 0 0 5px;
+}
+
+.card{
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    width: 150px;
+    height: 290px;
+    box-shadow: 5px  5px rgba(0, 0, 0, 0.13);
+}
+#cartoes{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+}
+
+footer{
+    background-color: mediumvioletred;
+    display: flex;
+    height: 36px; 
+    justify-content: space-around;
+    align-items: center;
+     
+}
