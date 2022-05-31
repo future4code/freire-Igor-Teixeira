@@ -1,0 +1,45 @@
+
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    color: white;
+}
+
+header{
+    display: flex;
+    background-color: black;
+    height: 10vh;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px 0 20px;
+}
+main{
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+
+}
+
+main div{
+    background-color: black;
+    flex-direction: column;
+    width: 90vw;
+    height: 40vh;
+}
+video{
+    width: 50vw;
+    height: 40vh;
+
+}
+
+footer{
+    background-color: black;
+    display: flex;
+    height: 6vh;
+    width: 100%;
+    bottom: 1px;
+    position: fixed;
+
+}
