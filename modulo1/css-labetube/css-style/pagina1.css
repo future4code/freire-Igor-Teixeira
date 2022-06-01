@@ -40,7 +40,6 @@ main{
     display: flex;
     justify-content: space-around;
     padding: 15px;
-
 }
 
 main div{
@@ -54,13 +53,10 @@ main div{
     align-content: space-around;
     flex-direction: column;
     flex-wrap: wrap;
-
 }
 div h1{
     text-align: center;
-    font-size: 1.2rem;
-    
-
+    font-size: 1.2rem;  
 }
 
 video{
@@ -68,7 +64,6 @@ video{
     padding: 20px;
     width: 80vw;
     height: 40vh;
-
 }
 
 footer{
@@ -79,6 +74,5 @@ footer{
     bottom: 1px;
     position: fixed;
     justify-content: space-around;
-    align-items: center;
-    
+    align-items: center;  
 }
