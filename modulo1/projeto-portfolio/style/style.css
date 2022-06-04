@@ -1,0 +1,134 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    color: white;
+    background-image: url(../imagens/backgroud.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;  
+} 
+
+header{
+    text-align: center;
+    padding-top: 20px;
+}
+.nav {
+    display: flex;
+    padding-top: 15px;
+    justify-content: space-evenly;  
+}
+.nav input{
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    background-color: #b8daf347;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+}
+.nav input:hover{
+    border: none;
+    background-color: #2b95e5;
+    transform: scale(1.5);
+}
+
+#apresentação{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 40px;
+    width: 90vw;
+}
+@keyframes rotate{
+    from { transform: rotateZ(0deg)}
+    to {transform:rotateZ(360deg);}
+}
+
+#apresentação img {
+    animation: rotate 100s linear infinite;
+    width: 30vw; 
+}
+
+#apresentação h2 {
+    display: inline;
+    padding: 10px;
+    font-size: 6vw;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.765);
+    
+}
+#ola{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1em;
+    padding-left: 2em;
+    padding-top: 1em;
+
+}
+#apresentação p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1em;
+    padding-left: 2em;
+    padding-top: 10px;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.466);
+}
+
+#aprsentação div{
+    display: flex;
+}
+
+.azul{
+    color: #2b95e5;
+}
+
+.contato{
+    margin-left:90px;
+    display: flex;
+    padding: 15px;
+    align-items: flex-start;
+    flex-direction: column;
+   
+ 
+}
+#whats input{
+    width: 150px;
+    height: 50px;
+    color: white;
+    background-color: #bdd8ed47;
+    margin-top: 9em;
+    margin-left: 230px;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 5px;
+}#whats input:hover{
+    background-color: #2b95e5;
+}
+
+    
+div label{
+    padding: 10px;
+    margin: auto;
+    border-radius: 5px;
+    background-color: #bdd8ed47;
+    
+}
+.contato input{
+    border: none;
+    border-bottom: solid;
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+ footer{
+    bottom: 10px;
+    position: fixed;
+    width: 90%;
+    text-align: center;
+ }
+ footer img {
+     padding-top: 10px;
+    width: 2vw;
+ }
+ footer img:hover{
+    transform: scale(1.5);
+ }

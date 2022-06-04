@@ -1,0 +1,134 @@
+@import url('https://fonts.google.com/share?selection.family=Passion%20One');
+
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+
+:root {
+    --font1: verdana, geneva, tahoma, sans-serif;
+    --font2: 'Passion One', cursive;
+    --font3: 'Sriracha', cursive;
+}
+
+body {
+    color: white;
+    animation: gradient 15s ease infinite;
+    background: linear-gradient(-45deg, #011523, #062a45, #042c4a, #2b95e5) no-repeat;
+    background-size: 300% 300%;
+    justify-content: center;
+    height: 90vh;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+header {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.nav {
+    display: flex;
+    padding-top: 15px;
+    justify-content: space-evenly;
+}
+
+.nav input {
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    background-color: #b8daf347;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.nav input:hover {
+    border: none;
+    background-color: #2b95e5;
+    transform: scale(1.5);
+}
+
+#projetos {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 3em;
+}
+
+#projetos p {
+    margin-top: -10px;
+    font-family: var(--font3);
+    font-size: 1.6em;
+    padding: 1em;
+    transition-property: background-color;
+    transition-duration: 2s;
+
+}
+#projetos p:hover{
+    color: #b6c5cf00;
+}
+
+#back1 {
+    background-image: url(/imagens/proj\ 1.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-size: 100%;
+
+}
+
+#back2 {
+    background-image: url(/imagens/imagemproj\ 2.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-size: 100%;
+}
+
+#back3 {
+    background-image: url(/imagens/imagem\ proj\ 3.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-size: 100%;
+
+
+}
+
+.front {
+    
+    background-color: #05243C;
+    width: 27vw;
+    height: 55vh;
+}
+
+.front:hover {
+    background-color: #d1e5f400;
+    transition-property: background-color;
+    transition-duration: 2s;
+
+}
+
+
+
+footer {
+    bottom: 10px;
+    position: fixed;
+    width: 90%;
+    text-align: center;
+
+}
+
+footer img {
+    width: 40px;
+}
+
+footer img:hover {
+    transform: scale(1.5);
+}
