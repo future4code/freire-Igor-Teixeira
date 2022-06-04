@@ -1,0 +1,102 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    
+    color: white;
+}
+#cabeçario{
+    display: flex;
+    align-items: center
+}
+.vermelho{
+    color: rgb(213, 16, 16);
+
+}
+
+header{
+    display: flex;
+    background-color: black;
+    height: 10vh;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px 0 20px;
+}
+img{
+    width: 40%;
+    height: 40%;
+}
+label{
+    background-color: rgb(213, 16, 16);
+    text-align: center;
+    border-radius: 5px; 
+    padding: 3px;
+    margin-left: 3px;
+}
+input{
+    width: 18vw;
+    height: 2vh;
+}
+
+.container{
+    background-color: rgba(255, 0, 0, 0.101);
+    border: solid;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    grid-template-rows: 2fr 2fr ;
+    height: 60vh;
+    width: 90vw;
+    gap: 10px;
+    padding: 15px;
+    margin: auto;   
+}
+@media screen and (min-device-width : 320px) and (max-device-width : 480px){
+    .container{
+        display: flex;
+        flex-direction: column;
+        height: 100%; 
+    }
+}
+
+.videos{
+    box-shadow: 3px 3px rgba(193, 12, 12, 0.083);
+    border-radius: 10px;
+}
+@media screen and (min-device-width : 320px) and (max-device-width : 480px){
+    .videos{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 70%; 
+    }
+}
+
+
+.videos:hover{
+    border-radius: 20px;
+    background-color: rgba(255, 0, 0, 0.139);
+        
+}
+div a {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+div a video{
+    display: flex;
+    width: 100%;
+    height: 90%;
+}
+footer{
+    background-color: black;
+    display: flex;
+    height: 6vh;
+    width: 100%;
+    bottom: 1px;
+    position: fixed;
+    justify-content: space-around;
+    align-items: center;
+    
+}
