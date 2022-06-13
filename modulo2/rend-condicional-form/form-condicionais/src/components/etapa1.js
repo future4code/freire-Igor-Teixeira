@@ -1,9 +1,7 @@
 import React from "react";
-import 
+import styled from "styled-components"
 
-const Container = `
-    ma
-`
+
 
 class Etapa1 extends React.Component{
     render(){

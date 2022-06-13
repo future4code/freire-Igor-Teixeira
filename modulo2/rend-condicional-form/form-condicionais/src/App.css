@@ -1,4 +1,14 @@
-#app{
-    display: flex;
+.App{
+    margin:0 auto;
+    text-align: center;
     
+    
+}
+button{
+    margin: 20px;
+    border: none;
+    background-color: rgb(5, 168, 168);
+    color: rgb(32, 31, 31);
+    height: 35px;
+    border-radius: 5px;
 }
