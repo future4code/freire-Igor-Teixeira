@@ -4,6 +4,7 @@ import axios from "axios";
 
 const Cadastro = styled.div`
   border: 1px solid black;
+  border-radius: 10px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -11,9 +12,13 @@ const Cadastro = styled.div`
   width: 200px;
   padding: 10px;
   margin-top: 30px;
+ 
 `;
 const Inputs = styled.input`
   margin-bottom: 10px;
+  border-radius: 10px;
+  border:none;
+  border-bottom: 1px solid gray;
 `;
 
 class DadosUsuario extends React.Component {
@@ -71,7 +76,7 @@ class DadosUsuario extends React.Component {
             value={this.state.email}
             onChange={this.onChangeEmail}
           />
-          <button onClick={this.CriarUsuario}>Cadastrar</button>
+          <button onClick={this.CriarUsuario}>Cadastro</button>
         </Cadastro>
       </div>
     );

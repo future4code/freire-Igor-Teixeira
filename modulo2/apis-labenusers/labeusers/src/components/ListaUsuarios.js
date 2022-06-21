@@ -7,18 +7,18 @@ const List = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-`
+`;
 const Usuarios = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 10px;
   width: 250px;
-`
+`;
 
 class CriaListaUsuarios extends React.Component {
   state = {
     listaDeUsuarios: [],
-  }
+  };
 
   componentDidMount() {
     this.getAllUsers();
@@ -46,34 +46,28 @@ class CriaListaUsuarios extends React.Component {
 
   // --------------------- DELETAR USUARIO ----------
   deleteUser = (event) => {
-    if(window.confirm("Deseja realmente apagar ?")=== true){
-    const id = event.target.value; // nesse caso, passo o value no botão!!
-    axios
-      .delete(
-        `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${id}`,
-        {
-          headers: {
-            Authorization: "igor-rodrigues-freire",
-          },
-        }
-      )
-      .then(() => {
-        this.getAllUsers();
-        
-      })
-      
-      .catch((erro) => {
-        console.log(erro.response.data);
-        console.log(erro.response.status);
-        alert("Ocorreu algum erro, tente novamente :(");
-      });
+    if (window.confirm("Deseja realmente apagar ?") === true) {
+      const id = event.target.value; // nesse caso, passo o value no botão!!
+      axios
+        .delete(
+          `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${id}`,
+          {
+            headers: {
+              Authorization: "igor-rodrigues-freire",
+            },
+          }
+        )
+        .then(() => {
+          this.getAllUsers();
+        })
 
-
+        .catch((erro) => {
+          console.log(erro.response.data);
+          console.log(erro.response.status);
+          alert("Ocorreu algum erro, tente novamente :(");
+        });
     }
-      
   };
-
-
 
   render() {
     const lista = this.state.listaDeUsuarios.map((item) => (
@@ -94,6 +88,5 @@ class CriaListaUsuarios extends React.Component {
     );
   }
 }
-
 
 export default CriaListaUsuarios;
