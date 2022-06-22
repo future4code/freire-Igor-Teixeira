@@ -7,6 +7,7 @@ const List = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  color: white;
 `;
 const Usuarios = styled.div`
   display: flex;

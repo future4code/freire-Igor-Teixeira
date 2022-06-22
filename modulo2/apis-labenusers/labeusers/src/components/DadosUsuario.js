@@ -9,15 +9,15 @@ const Cadastro = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 200px;
+  width: 300px;
   padding: 10px;
   margin-top: 30px;
- 
+  background-color: white;
 `;
 const Inputs = styled.input`
   margin-bottom: 10px;
   border-radius: 10px;
-  border:none;
+  border: none;
   border-bottom: 1px solid gray;
 `;
 
@@ -58,14 +58,16 @@ class DadosUsuario extends React.Component {
       })
       .catch((erro) => {
         console.log(erro.data);
-        alert("Não foi possível realizar o cadastro. Por favor, verifique todos os campos e tente novamente");
+        alert(
+          "Não foi possível realizar o cadastro. Por favor, verifique todos os campos e tente novamente"
+        );
       });
   };
   render() {
     return (
       <div>
         <Cadastro>
-          <h3>Cadastro:</h3>
+          <h2>Cadastro</h2>
           <Inputs
             placeholder={"Nome"}
             value={this.state.nome}
