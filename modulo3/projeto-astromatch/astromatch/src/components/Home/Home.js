@@ -1,44 +1,81 @@
 import React from "react";
 import axios from "axios";
-import { Container } from "./style"
-import { useState,useEffect } from "react";
+import { Container } from "./style";
+import { useState, useEffect } from "react";
+import { FcLike } from "react-icons/fc";
+import { VscClose } from "react-icons/vsc";
 
-export const Home = () =>{
-    const [pessoa, setPessoa] = useState([])
+export const Home = () => {
+  const [pessoa, setPessoa] = useState([]);
 
-    //---------------------- RENDERIZAÇÃO --------------------
-    useEffect(() => {
-        getProfileToChoose()
-    },[])
+  //---------------------- RENDERIZAÇÃO --------------------
+  useEffect(() => {
+    getProfileToChoose();
+  }, []);
 
-    // ----------------- VER NOVAS PESSOAS --------------------
-    const getProfileToChoose = () => {
-        axios.get('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/igor-rodrigues/person')
-        .then((res) => {
-            setPessoa(res.data.profile)
-            console.log(pessoa)
-        })
-        .catch((error) => { console.log("error", error.response) })
-    }
+  //---------------- VER NOVAS PESSOAS --------------------
+  const getProfileToChoose = () => {
+    axios
+      .get(
+        "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/igor/person"
+      )
+      .then((res) => {
+        setPessoa(res.data.profile);
+        console.log(res.data.profile);
+      })
+      .catch((error) => {
+        console.log("error", error.response);
+      });
+  };
 
-    return(
-        <Container>
-            
-            
-            <img src={pessoa.photo} alt={pessoa.photo_alt} />
+  const ChoosePerson = () => {
+    const body = { id: pessoa.id, choice: true };
+    axios
+      .post(
+        "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/igor/choose-person",
+        body
+      )
+      .then(() => {
+        getProfileToChoose();
+      })
+      .catch((error) => {
+        alert(error.response);
+      });
+  };
 
-            <div className="name-age">
-                <h2>{pessoa.name}</h2>
-                <p>{pessoa.age}</p>
-            </div>
+  return (
+    <Container>
+      <div className="foto">
+        <img src={pessoa.photo} alt={pessoa.photo_alt} />
+      </div>
 
-            <p>{pessoa.bio}</p>
-
-            <div >
-            <button>x</button>
-            <button>s2</button>
-            </div>
-            
-        </Container>
-    )
-}
+      <div className="name-age">
+        <div>
+          <h2>{pessoa.name},</h2>
+          <strong>
+            <p>{pessoa.age}</p>
+          </strong>
+        </div>
+        <div>
+          <p>{pessoa.bio}</p>
+        </div>
+      </div>
+      <div className="botoes">
+        <button
+          onClick={() => {
+            ChoosePerson(false);
+          }}
+        >
+          <VscClose fontSize="44px" color="red" />
+        </button>
+        <button
+          onClick={() => {
+            ChoosePerson(true);
+          }}
+        >
+          <FcLike fontSize="44px" color="red" />
+        </button>
+      </div>
+    </Container>
+  );
+};
