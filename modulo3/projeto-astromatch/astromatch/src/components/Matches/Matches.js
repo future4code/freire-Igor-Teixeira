@@ -18,7 +18,9 @@ export const Matches = () => {
         "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/igor/matches"
       )
       .then((res) => {
+        
         setMatches(res.data.matches)
+        
       })
 
       .catch((error) => {
@@ -39,21 +41,24 @@ export const Matches = () => {
 
 
   const list = matches.map((item) => {
+    console.log(matches)
     return (
-      <li>
+      <li key={item.id}>
         <img src={item.photo} alt={item.photo_alt} />
         <strong>
           <p>{item.name}</p>
         </strong>
       </li>
     );
+   
   });
 
   return (
     <Container>
-      <ul>{list.length >= 1 ? list : <h2>Você ainda não tem matches</h2>}</ul>
+      <ul>{matches.length > 0 ? <ul>{list}</ul> : <h2>Você não possui matches 	
+        &#128577;</h2>}</ul>
       <div className="botoes">
-      <button onClick={clear}><AiOutlineClear fontSize="40px"/></button>
+      <button onClick={clear}><AiOutlineClear size="30px"/></button>
       </div>
     </Container>
   );

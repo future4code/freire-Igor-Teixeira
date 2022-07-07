@@ -40,9 +40,11 @@ export const Container = styled.div`
   button {
     border-radius: 100%;
     border:none;
+    
 
     &:hover{
-      background-color: #ba87a3;
+      background-color: #F5AA61;
+      transform: scale(1.2);
       
     }
   }

@@ -4,8 +4,13 @@ export const Container = styled.div`
   position: relative;
   width: 100%;
   height: 85%;
+  color: white;
 
-  ul{
+  h2 {
+    margin: 10px;
+  }
+
+  ul {
     margin: 0;
     padding: 0;
   }
@@ -17,15 +22,15 @@ export const Container = styled.div`
     gap: 15px;
     list-style: none;
 
-    &:hover{
-        background-color:#E35A76;
-        border-radius: 20px 0 0 20px;
-        
+    &:hover {
+      background-color: #f5aa61;
+      border-radius: 20px 0 0 20px;
     }
   }
 
   img {
     border-radius: 50px;
+    border: 4px solid #f5aa61;
     width: 50px;
     height: 50px;
   }
@@ -40,7 +45,7 @@ export const Container = styled.div`
 
   button {
     cursor: pointer;
-    border:none;
+    border: none;
     border-radius: 10px;
   }
 `;

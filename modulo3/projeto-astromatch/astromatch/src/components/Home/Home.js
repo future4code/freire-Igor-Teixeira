@@ -4,6 +4,9 @@ import { Container } from "./style";
 import { useState, useEffect } from "react";
 import { FcLike } from "react-icons/fc";
 import { VscClose } from "react-icons/vsc";
+import Swal from "sweetalert2";
+import { Loader } from "../loader/Loader";
+
 
 export const Home = () => {
   const [pessoa, setPessoa] = useState([]);
@@ -11,17 +14,17 @@ export const Home = () => {
   //---------------------- RENDERIZAÇÃO --------------------
   useEffect(() => {
     getProfileToChoose();
+    
   }, []);
 
   //---------------- VER NOVAS PESSOAS --------------------
   const getProfileToChoose = () => {
     axios
       .get(
-        "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/igor/person"
+        "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/igorr/person"
       )
       .then((res) => {
-        setPessoa(res.data.profile);
-        console.log(res.data.profile);
+        setPessoa(res.data.profile );
       })
       .catch((error) => {
         console.log("error", error.response);
@@ -30,6 +33,7 @@ export const Home = () => {
 
   const ChoosePerson = () => {
     const body = { id: pessoa.id, choice: true };
+    
     axios
       .post(
         "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/igor/choose-person",
@@ -37,6 +41,7 @@ export const Home = () => {
       )
       .then(() => {
         getProfileToChoose();
+        
       })
       .catch((error) => {
         alert(error.response);
@@ -71,11 +76,23 @@ export const Home = () => {
         <button
           onClick={() => {
             ChoosePerson(true);
+            Swal.fire({
+              title: 'Match!!',
+              text: `Você deu match com ${pessoa.name} .`,
+              imageUrl: `${pessoa.photo}`,
+              imageWidth: 200,
+              imageHeight: 200,
+              imageAlt: `${pessoa.photo_alt}`,
+              confirmButtonColor: " #e35a76",
+              confirmButtonText:"&#9829"
+
+            })
           }}
         >
           <FcLike fontSize="44px" color="red" />
         </button>
       </div>
+      {/* <Loader/> */}
     </Container>
   );
 };
