@@ -5,16 +5,20 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: column;
   margin: 20px;
+  
 
   img {
     width: 300px;
-    height: 450px;
+    height: 440px;
     border-radius: 15px;
     box-shadow: 0px 0px 15px #c2b4b4;
+    
+
   }
 
   .foto {
     position: relative;
+    
   }
 
   .name-age {
@@ -32,20 +36,19 @@ export const Container = styled.div`
       display: flex;
       align-items: center;
     }
-    p, h2 {
+    p,
+    h2 {
       margin: 10px;
     }
   }
 
   button {
     border-radius: 100%;
-    border:none;
-    
+    border: 3px solid #e94d62;
 
-    &:hover{
-      background-color: #F5AA61;
+    button:hover {
+      background-color: #f5aa61;
       transform: scale(1.2);
-      
     }
   }
   .botoes {
@@ -53,5 +56,21 @@ export const Container = styled.div`
     width: 100%;
     justify-content: space-around;
     margin: 10px;
+  }
+
+  @media screen and (max-device-width: 400px) {
+    .name-age,
+    img {
+      width: 80vw;
+      height: 72vh;
+    }
+
+    button:hover {
+      background-color: none;
+      transform: scale(none);
+    }
+    button:active {
+      background-color: #f5aa61;
+    }
   }
 `;

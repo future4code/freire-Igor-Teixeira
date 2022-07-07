@@ -1,23 +1,28 @@
-import React from "react";
+import React, { useTransition } from "react";
 import axios from "axios";
 import { Container } from "./style";
 import { useState, useEffect } from "react";
 import { FcLike } from "react-icons/fc";
 import { VscClose } from "react-icons/vsc";
 import Swal from "sweetalert2";
-import { Loader } from "../loader/Loader";
+import {Loading} from "../loading/Loading"
 
 
 export const Home = () => {
   const [pessoa, setPessoa] = useState([]);
+  const [removeLoading, setRemoveLoading] = useState(false)
 
   //---------------------- RENDERIZAÇÃO --------------------
+  
   useEffect(() => {
-    getProfileToChoose();
+    setTimeout(()=>{
+      getProfileToChoose();
+    },1500)
     
   }, []);
 
   //---------------- VER NOVAS PESSOAS --------------------
+
   const getProfileToChoose = () => {
     axios
       .get(
@@ -25,12 +30,15 @@ export const Home = () => {
       )
       .then((res) => {
         setPessoa(res.data.profile );
+        setRemoveLoading(true)
+        console.log(res.data.profile)
+        
       })
       .catch((error) => {
         console.log("error", error.response);
       });
   };
-
+//-------------------- RECEBE ID E CHOICE ---------------------------
   const ChoosePerson = () => {
     const body = { id: pessoa.id, choice: true };
     
@@ -39,14 +47,30 @@ export const Home = () => {
         "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/igor/choose-person",
         body
       )
-      .then(() => {
+      .then((res) => {
         getProfileToChoose();
+        console.log(res.data.isMatch)
+        if(res.data.isMatch === true){
+          ChoosePerson();
+            Swal.fire({
+              title: 'Match!!',
+              text: `Você deu match com ${pessoa.name} .`,
+              imageUrl: `${pessoa.photo}`,
+              imageWidth: 200,
+              imageHeight: 200,
+              imageAlt: `${pessoa.photo_alt}`,
+              confirmButtonColor: " #e35a76",
+              confirmButtonText:"&#9829"
+            })
+        }
         
       })
       .catch((error) => {
         alert(error.response);
       });
   };
+
+
 
   return (
     <Container>
@@ -68,31 +92,20 @@ export const Home = () => {
       <div className="botoes">
         <button
           onClick={() => {
-            ChoosePerson(false);
+            getProfileToChoose();
           }}
         >
           <VscClose fontSize="44px" color="red" />
         </button>
         <button
           onClick={() => {
-            ChoosePerson(true);
-            Swal.fire({
-              title: 'Match!!',
-              text: `Você deu match com ${pessoa.name} .`,
-              imageUrl: `${pessoa.photo}`,
-              imageWidth: 200,
-              imageHeight: 200,
-              imageAlt: `${pessoa.photo_alt}`,
-              confirmButtonColor: " #e35a76",
-              confirmButtonText:"&#9829"
-
-            })
+            ChoosePerson();
           }}
         >
           <FcLike fontSize="44px" color="red" />
         </button>
       </div>
-      {/* <Loader/> */}
+     {!removeLoading && <Loading/>}
     </Container>
   );
 };

@@ -3,7 +3,7 @@ import { Header } from "./components/header/Header";
 import styled from "styled-components";
 import { useState } from "react";
 import { Matches } from "./components/Matches/Matches";
-import { Loader } from "./components/loader/Loader";
+
 
 
 const Container = styled.div`
@@ -12,7 +12,15 @@ const Container = styled.div`
   width:400px;
   height:600px;
   border-radius:10px;
-  background-image: linear-gradient(#EA5462 ,#EF7B60 , #F5A862);
+  background-image: linear-gradient(#E94D62,#eb6b58 ,#f2755a , #e79950,#f3bb86);
+
+  @media screen and (max-device-width : 400px) {
+    width:100vw;
+    height: 100vh;
+    margin:0px auto;
+    border-radius: 0px;
+    border: none;
+}
 
 `
 

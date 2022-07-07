@@ -7,7 +7,7 @@ export const Header = (props) => {
     <Container>
       
       <button onClick={props.home}>
-        < RiUserShared2Fill size="25px" 
+        < RiUserShared2Fill size="25px"  color="white"
         onMouseOver={({target})=>target.style.color="#F5AA61"}
         onMouseOut={({target})=>target.style.color="white"} />
       </button>
