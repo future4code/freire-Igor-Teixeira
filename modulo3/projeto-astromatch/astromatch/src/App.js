@@ -14,7 +14,7 @@ const Container = styled.div`
   border-radius:10px;
   background-image: linear-gradient(#E94D62,#eb6b58 ,#f2755a , #e79950,#f3bb86);
 
-  @media screen and (max-device-width : 400px) {
+  @media screen and (min-device-width : 320px)  and (max-device-width : 400px) {
     width:100vw;
     height: 100vh;
     margin:0px auto;

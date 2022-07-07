@@ -5,43 +5,44 @@ import { useState, useEffect } from "react";
 import { FcLike } from "react-icons/fc";
 import { VscClose } from "react-icons/vsc";
 import Swal from "sweetalert2";
-import {Loading} from "../loading/Loading"
-
+import { Loading } from "../loading/Loading";
 
 export const Home = () => {
   const [pessoa, setPessoa] = useState([]);
-  const [removeLoading, setRemoveLoading] = useState(false)
+  const [removeLoading, setRemoveLoading] = useState(false);
 
   //---------------------- RENDERIZAÇÃO --------------------
-  
+
   useEffect(() => {
-    setTimeout(()=>{
+    setTimeout(() => {
       getProfileToChoose();
-    },1500)
-    
+    }, 1500);
   }, []);
+
+  useEffect(() => {}, [pessoa]);
 
   //---------------- VER NOVAS PESSOAS --------------------
 
   const getProfileToChoose = () => {
+    setRemoveLoading(false);
     axios
       .get(
         "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/igorr/person"
       )
       .then((res) => {
-        setPessoa(res.data.profile );
-        setRemoveLoading(true)
-        console.log(res.data.profile)
-        
+        setPessoa(res.data.profile);
+        setRemoveLoading(true);
+        console.log(res.data.profile);
       })
       .catch((error) => {
-        console.log("error", error.response);
+        console.log("error", error.response || []);
       });
   };
-//-------------------- RECEBE ID E CHOICE ---------------------------
+  //-------------------- RECEBE ID E CHOICE ---------------------------
   const ChoosePerson = () => {
+    setRemoveLoading(false);
     const body = { id: pessoa.id, choice: true };
-    
+
     axios
       .post(
         "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/igor/choose-person",
@@ -49,28 +50,24 @@ export const Home = () => {
       )
       .then((res) => {
         getProfileToChoose();
-        console.log(res.data.isMatch)
-        if(res.data.isMatch === true){
-          ChoosePerson();
-            Swal.fire({
-              title: 'Match!!',
-              text: `Você deu match com ${pessoa.name} .`,
-              imageUrl: `${pessoa.photo}`,
-              imageWidth: 200,
-              imageHeight: 200,
-              imageAlt: `${pessoa.photo_alt}`,
-              confirmButtonColor: " #e35a76",
-              confirmButtonText:"&#9829"
-            })
+        console.log(res.data.isMatch);
+        if (res.data.isMatch === true) {
+          Swal.fire({
+            title: "Match!!",
+            text: `Você deu match com ${pessoa.name} .`,
+            imageUrl: `${pessoa.photo}`,
+            imageWidth: 200,
+            imageHeight: 200,
+            imageAlt: `${pessoa.photo_alt}`,
+            confirmButtonColor: " #e35a76",
+            confirmButtonText: "&#9829",
+          });
         }
-        
       })
       .catch((error) => {
         alert(error.response);
       });
   };
-
-
 
   return (
     <Container>
@@ -105,7 +102,7 @@ export const Home = () => {
           <FcLike fontSize="44px" color="red" />
         </button>
       </div>
-     {!removeLoading && <Loading/>}
+      {!removeLoading && <Loading />}
     </Container>
   );
 };
