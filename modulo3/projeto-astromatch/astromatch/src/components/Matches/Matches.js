@@ -64,11 +64,11 @@ export const Matches = () => {
     <Container>
       
       <ul>
-        {matches.length > 0 ? (
-          <ul>{list}</ul>
-        ) : (
-          <h2>Você não possui matches &#128577;</h2>
-        )}
+        {matches.length > 0 ? (<ul>{list}</ul> ) : ( <h2>Você não possui matches &#128577;</h2>)}
+       
+
+
+
       </ul>
       <div className="botoes">
         <button onClick={clear}>

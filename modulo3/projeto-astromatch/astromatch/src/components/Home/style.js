@@ -1,15 +1,16 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+.containerCard{
   display: flex;
   align-items: center;
   flex-direction: column;
   margin: 20px;
-  
+}
 
   img {
     width: 300px;
-    height: 440px;
+    height: 430px;
     border-radius: 15px;
     box-shadow: 0px 0px 15px #c2b4b4;
     
@@ -45,17 +46,17 @@ export const Container = styled.div`
   button {
     border-radius: 100%;
     border: 3px solid #e94d62;
+    gap: 5px;
+   
 
     button:hover {
       background-color: #f5aa61;
       transform: scale(1.2);
     }
   }
-  .botoes {
+  .botao{
     display: flex;
-    width: 100%;
     justify-content: space-around;
-    margin: 10px;
   }
 
   @media screen and (max-device-width: 400px) {

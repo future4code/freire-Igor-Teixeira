@@ -6,6 +6,7 @@ import { Matches } from "./components/Matches/Matches";
 
 
 
+
 const Container = styled.div`
   margin:10px auto;
   border: 1px solid;
@@ -13,6 +14,7 @@ const Container = styled.div`
   height:600px;
   border-radius:10px;
   background-image: linear-gradient(#E94D62,#eb6b58 ,#f2755a , #e79950,#f3bb86);
+  
 
   @media screen and (min-device-width : 320px)  and (max-device-width : 400px) {
     width:100vw;
@@ -50,6 +52,7 @@ const irParaMatche =() =>{
      home={irParaHome}
      matches={irParaMatche}
      />
+    
       {TrocaPagina()}
     </Container>
 
