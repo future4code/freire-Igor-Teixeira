@@ -1,23 +1,35 @@
 import React, { useEffect, useState } from "react";
 import { url_base } from "../../Constants/URL_BASE";
 import axios from "axios";
+import { useParams,useNavigate } from "react-router-dom";
+import { useProtectPage } from "../../Components/hoocks/useProtectPage";
+import { goBack } from "../../routes/Coordinator";
 
 export const Details = () => {
+  useProtectPage();
+  const navigate = useNavigate()
   const [details, setDetails] = useState([]);
-  // const [candidate,setCandidate] = useState([])
+  const [candidate, setCandidate] = useState([]);
+  const [aprovados, setAprovados] = useState([]);
+
   const token = localStorage.getItem("token");
+  const pathParams = useParams();
+  const id = pathParams.id;
 
   const getTripDetail = () => {
     axios
-      .get(`${url_base}/trip/cYaWTDlLI28cnAgmRyrT`, {
+      .get(`${url_base}/trip/${id}`, {
         headers: {
           auth: token,
         },
       })
       .then((res) => {
         setDetails(res.data.trip);
-
+        setCandidate(res.data.trip.candidates);
+        setAprovados(res.data.trip.approved);
         console.log("deu boa ", res.data.trip);
+        console.log(res.data.trip.approved);
+        console.log(res.data.trip.candidates);
       })
       .catch((error) => {
         alert(error);
@@ -25,25 +37,82 @@ export const Details = () => {
       });
   };
 
+  const decideCandidate = (choise, candidateId) => {
+    const body = {
+      approve: choise,
+    };
+    axios
+      .put(`${url_base}/trips/${id}/candidates/${candidateId}/decide`, body, {
+        headers: {
+          auth: token,
+        },
+      })
+      .then((res) => {
+        alert(`Candidato ${choise ? "Aprovado" : "Reprovado"} com sucesso`);
+        getTripDetail();
+      })
+      .catch((error) => {
+        alert(error.res, "erro");
+      });
+  };
+
   useEffect(() => {
     getTripDetail();
   }, []);
 
-  // const listDetails= details.map((item) => {
-  //     return (
-  //     <li key={item.id}>
-  //         <h3>{item.name}</h3>
-  //         </li>)
-  //    })
+  const listCandidates = candidate.map((item) => {
+    return (
+      <li key={item.id}>
+        <p>{item.name}</p>
+        <p>{item.age}</p>
+        <p>{item.applicationText}</p>
+        <p>{item.profession}</p>
+        <p>{item.country}</p>
+        <button
+          onClick={() => {
+            decideCandidate(true, item.id);
+          }}
+        >
+          apro
+        </button>
+        <button
+          onClick={() => {
+            decideCandidate(false, item.id);
+          }}
+        >
+          repro
+        </button>
+      </li>
+    );
+  });
+
+  const listAprovados = aprovados.map((aprov) => {
+    return (
+      <div key={aprov.id}>
+        <li> {aprov.name}</li>
+      </div>
+    );
+  });
 
   return (
     <div>
-      <h1>{details.name}</h1>
-      <h1>detalhes</h1>
-      <button>voltar</button>
-      <button>criar viajem</button>
-      <button>sair</button>
-      {/* <div>{listDetails}</div> */}
+      <button onClick={()=>{goBack(navigate)}}>voltar</button>
+      <div>
+        <h1>detalhes</h1>
+        <p>{details.name}</p>
+        <p>{details.description}</p>
+        <p>{details.planet}</p>
+        <p>{details.durationInDays}</p>
+        <p>{details.date}</p>
+      </div>
+      <h1>Candidatos</h1>
+      <div>{listCandidates}</div>
+      <h1>Aprovados</h1>
+      {listAprovados}
+
+      
+    
+      
     </div>
   );
 };

@@ -18,7 +18,6 @@ export const LoginAdm = () => {
     }
 
     const login = () => {
-        console.log(email,password)
         const body ={
             email: email,
             password: password,
@@ -26,7 +25,7 @@ export const LoginAdm = () => {
         axios.post(`${url_base}/login`,body)
         .then((res)=>{
             localStorage.setItem('token', res.data.token)
-            // goToAboutPage(navigate("/details"))
+            goToAboutPage(navigate("/pageAdm"))
             console.log("deu certo",res.data)
             
         }).catch((error)=>{
