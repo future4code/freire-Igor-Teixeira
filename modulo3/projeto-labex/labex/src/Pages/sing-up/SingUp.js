@@ -3,45 +3,71 @@ import { Container, Form } from "./styled";
 import { countries } from "../../Constants/Countries";
 import { useForm } from "../../Components/hoocks/useForm";
 import { url_base } from "../../Constants/URL_BASE";
-import { axios } from "axios";
+
 import { useResquestTrips } from "../../Components/hoocks/useRequestTrips";
-import {goBack,goToTrips} from "../../routes/Coordinator"
+import { goBack } from "../../routes/Coordinator"
 import { useNavigate } from "react-router";
+import axios from "axios";
+
+
+
 
 
 export const SingUp = () => {
+
   const { form, onChange, cleanFields } = useForm({
     name: "",
     age: "",
-    description: "",
+    applicationText: "",
     profession: "",
     country: "",
     trip: "",
   });
+  console.log(form.name)
+  console.log(form.age)
+  console.log(form.applicationText)
+  console.log(form.profession)
+  console.log(form.country)
+  console.log(form.trip)
+
 
   const trips = useResquestTrips()
   const navigate = useNavigate()
 
   const applyToTrip = (event) => {
-    event.preventDefault();
-    axios
-      .post(`${url_base}/trips/${form.trip}/apply`, form)
-      .then((res) => {
-        alert("Solicitação enviada com sucesso!");
-        cleanFields();
-      })
-      .catch((error) => {
-        alert(
-          "Solicitação não enviada, por gentileza, verificar todos os campos e tentar novamente",
-          error.response
-        );
-      });
-  };
- 
+    axios.post(`${url_base}/trips/${form.trip}/apply`, form).then((res) => {
+          alert("Solicitação enviada com sucesso!")
+          cleanFields()
+          navigate(navigate - 1)
+        }).catch((error) => {
+          alert("Solicitação não enviada, por gentileza, verificar todos os campos e tentar novamente", error.response)
+        })
+      }
+
+
+
+  //   event.preventDefault()
+  //   axios.post(`${url_base}/trips/${form.trip}/apply`, form).then((res) => {
+  //     alert("Solicitação enviada com sucesso!")
+  //     cleanFields()
+  //     navigate(navigate - 1)
+  //   }).catch((error) => {
+  //     alert("Solicitação não enviada, por gentileza, verificar todos os campos e tentar novamente", error.response)
+  //   })
+  // }
+
+  const mapOption = trips.map((trip) => {
+    return (
+      <option key={trip.id} value={trip.id}>
+        {trip.name}
+      </option>
+    )
+  })
+
   return (
     <Container>
-      
-      <Form onSubmit={applyToTrip}>
+
+      <Form onSubmit={applyToTrip} >
         <h1>inscreva-se para viajem</h1>
         <input
           placeholder={"Nome"}
@@ -68,8 +94,8 @@ export const SingUp = () => {
           rows="2"
           placeholder="Por que deseja ir a viajem"
           onChange={onChange}
-          name={"description"}
-          value={form.description}
+          name={"applicationText"}
+          value={form.applicationText}
         ></textarea>
 
         <input
@@ -81,41 +107,30 @@ export const SingUp = () => {
           name={"profession"}
         />
 
-        <select name="country" id="" placeholder="pais">
-          <option value={""} selected disabled>
-            Escolha um País
-          </option>
-          {countries.map((country) => {
-            return (
-              <option value={country} key={country}>
-                {country}
-              </option>
-            );
-          })}
-        </select>
-
         <select
-          name={"trip"}
-          placeholder="escolha uma viajem "
-          value={form.trip}
+          placeholder={"País"}
+          name={"country"}
+          value={form.country}
           onChange={onChange}
           required
         >
-          <option value="" selected disabled>
-            escolha uma viagem
-          </option>
-          {trips.map((trips) => {
-            return (
-              <option value={trips} key={trips}>
-                {trips.name}
-              </option>
-            );
+          <option value={""} disabled>Escolha um País</option>
+          {countries.map((country) => {
+            return <option value={country} key={country}>{country}</option>
           })}
-          
         </select>
 
-        <button onClick={()=>{goBack(navigate)}}>voltar</button>
-        <button onClick={()=>{goToTrips(navigate)}}>enviar</button>
+
+        <select value={form.trip}
+          onChange={onChange}
+          name={"trip"}
+          required>
+          <option value="" selected disabled>Escolha uma Viagem</option>
+          {mapOption}
+        </select>
+
+        <button onClick={() => { goBack(navigate) }}>voltar</button>
+        <button>enviar</button>
       </Form>
     </Container>
   );

@@ -1,32 +1,36 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React from "react";
 import {url_base} from "../../Constants/URL_BASE"
-import {goBack,goToAboutPage} from "../../routes/Coordinator"
-import { useNavigate } from "react-router";
+import {goBack} from "../../routes/Coordinator"
+import { useNavigate,useParams } from "react-router";
+import { useForm } from "../../Components/hoocks/useForm";
+import { useProtectPage } from "../../Components/hoocks/useProtectPage";
 
 export const LoginAdm = () => {
+
+    useProtectPage()
     const navigate = useNavigate() 
-    const [email,setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const {form,onChange,cleanFields} = useForm({
+        email:"",
+        password:"",
+    })
 
-    const onchangeEmail = (e) =>{
-        setEmail(e.target.value)
-    }
-    
-    const onChangePassword = (e) =>{
-        setPassword(e.target.value)
-    }
+    const pathParams = useParams();
+  const pageAdm= pathParams.pageAdm;
 
-    const login = () => {
+    const login = (event) => {
+        event.preventDefault()
         const body ={
-            email: email,
-            password: password,
+            email: form.email,
+            password: form.password,
         }
         axios.post(`${url_base}/login`,body)
         .then((res)=>{
             localStorage.setItem('token', res.data.token)
-            goToAboutPage(navigate("/pageAdm"))
+            navigate("pageAdm")
             console.log("deu certo",res.data)
+            cleanFields()
+            
             
         }).catch((error)=>{
             alert(error,"por favor verifique se todos campos foram preenchidos")
@@ -38,18 +42,23 @@ export const LoginAdm = () => {
 
         <div>
             <h1>login adm</h1>
-            <input type="email"
-            onChange={onchangeEmail}
+            <form onSubmit={login}>
+            <input
+             type="email"
+            onChange={onChange}
             placeholder={"Email"}
-            value={email} />
+            value={form.email}
+            name={"email"} />
 
-            <input type="password" 
-            onChange={onChangePassword} 
+            <input 
+            type="password" 
+            onChange={onChange} 
             placeholder={"senha"}
-            value={password}/>
+            value={form.password}
+            name={"password"}/>
             <button onClick={()=>{goBack(navigate)}}>voltar</button>
-            <button onClick={login}>logar</button>
-
+            <button>logar</button>
+            </form>
         </div>
     )
 }

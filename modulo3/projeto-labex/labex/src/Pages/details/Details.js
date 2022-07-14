@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { url_base } from "../../Constants/URL_BASE";
+import { url_base ,token} from "../../Constants/URL_BASE";
 import axios from "axios";
 import { useParams,useNavigate } from "react-router-dom";
 import { useProtectPage } from "../../Components/hoocks/useProtectPage";
@@ -12,24 +12,17 @@ export const Details = () => {
   const [candidate, setCandidate] = useState([]);
   const [aprovados, setAprovados] = useState([]);
 
-  const token = localStorage.getItem("token");
+
   const pathParams = useParams();
   const id = pathParams.id;
 
   const getTripDetail = () => {
     axios
-      .get(`${url_base}/trip/${id}`, {
-        headers: {
-          auth: token,
-        },
-      })
+      .get(`${url_base}/trip/${id}`,token)
       .then((res) => {
         setDetails(res.data.trip);
         setCandidate(res.data.trip.candidates);
         setAprovados(res.data.trip.approved);
-        console.log("deu boa ", res.data.trip);
-        console.log(res.data.trip.approved);
-        console.log(res.data.trip.candidates);
       })
       .catch((error) => {
         alert(error);
@@ -42,11 +35,7 @@ export const Details = () => {
       approve: choise,
     };
     axios
-      .put(`${url_base}/trips/${id}/candidates/${candidateId}/decide`, body, {
-        headers: {
-          auth: token,
-        },
-      })
+      .put(`${url_base}/trips/${id}/candidates/${candidateId}/decide`, body,token)
       .then((res) => {
         alert(`Candidato ${choise ? "Aprovado" : "Reprovado"} com sucesso`);
         getTripDetail();
