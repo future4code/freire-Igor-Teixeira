@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 import {url_base} from "../../Constants/URL_BASE"
 import {goBack} from "../../routes/Coordinator"
-import { useNavigate,useParams } from "react-router";
+import { useNavigate} from "react-router";
 import { useForm } from "../../Components/hoocks/useForm";
 import { useProtectPage } from "../../Components/hoocks/useProtectPage";
 
@@ -15,9 +15,7 @@ export const LoginAdm = () => {
         password:"",
     })
 
-    const pathParams = useParams();
-  const pageAdm= pathParams.pageAdm;
-
+   
     const login = (event) => {
         event.preventDefault()
         const body ={

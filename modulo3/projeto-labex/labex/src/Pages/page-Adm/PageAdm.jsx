@@ -3,7 +3,7 @@ import React,{useEffect} from "react";
 import { useResquestTrips } from "../../Components/hoocks/useRequestTrips";
 import {useNavigate} from "react-router-dom"
 import { url_base,token } from "../../Constants/URL_BASE";
-import { goBack, goToAboutPage,goToHome } from "../../routes/Coordinator";
+import { goBack, goToAboutPage} from "../../routes/Coordinator";
 import { useProtectPage } from "../../Components/hoocks/useProtectPage";
 
 
