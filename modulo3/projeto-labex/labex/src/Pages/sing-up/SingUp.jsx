@@ -7,6 +7,7 @@ import { useResquestTrips } from "../../Components/hoocks/useRequestTrips";
 import { goBack } from "../../routes/Coordinator"
 import { useNavigate } from "react-router";
 import axios from "axios";
+import { FormControl, TextField, Select, InputLabel } from "@material-ui/core";
 
 
 
@@ -27,13 +28,13 @@ export const SingUp = () => {
 
   const applyToTrip = (event) => {
     axios.post(`${url_base}/trips/${form.trip}/apply`, form).then((res) => {
-          alert("Solicitação enviada com sucesso!")
-          cleanFields()
-          navigate(navigate - 1)
-        }).catch((error) => {
-          alert("Solicitação não enviada, por gentileza, verificar todos os campos e tentar novamente", error.response)
-        })
-      }
+      alert("Solicitação enviada com sucesso!")
+      cleanFields()
+      navigate(navigate - 1)
+    }).catch((error) => {
+      alert("Solicitação não enviada, por gentileza, verificar todos os campos e tentar novamente", error.response)
+    })
+  }
 
   const mapOption = trips.map((trip) => {
     return (
@@ -45,12 +46,15 @@ export const SingUp = () => {
 
   return (
     <Container>
-      
 
-      <Form onSubmit={applyToTrip} >
+
+      <Form onSubmit={applyToTrip} variant="outlined">
         <h1>inscreva-se para viajem</h1>
-        <input
-          placeholder={"Nome"}
+        <TextField
+          id="outlined-basic"
+          label="Nome"
+          variant="outlined"
+
           value={form.name}
           onChange={onChange}
           name={"name"}
@@ -59,7 +63,10 @@ export const SingUp = () => {
           title={"O nome deve ter no mínimo 3 letras"}
         />
 
-        <input
+        <TextField
+          id="outlined-basic"
+          label="Idade"
+          variant="outlined"
           placeholder="idade"
           onChange={onChange}
           value={form.age}
@@ -68,17 +75,23 @@ export const SingUp = () => {
           min={18}
         />
 
-        <textarea
-          id=""
+        <TextField
+          id="outlined-basic"
+          label="Texto de inscrição"
+          variant="outlined"
+
           cols="30"
           rows="2"
-          placeholder="Por que deseja ir a viajem"
           onChange={onChange}
           name={"applicationText"}
           value={form.applicationText}
-        ></textarea>
+        ></TextField>
 
-        <input
+        <TextField
+          id="outlined-basic"
+          label="Profição"
+          variant="outlined"
+
           type="text"
           placeholder="profição"
           onChange={onChange}
@@ -86,32 +99,42 @@ export const SingUp = () => {
           required
           name={"profession"}
         />
+        <FormControl variant="outlined">
+          <InputLabel htmlFor='outlined-age-native-simple'>Paìs</InputLabel>
+          <Select native
+            id='outlined-age-native-simple'
+            name={"country"}
+            value={form.country}
+            onChange={onChange}
+            label="Pais"
+            required
 
-        <select
-          placeholder={"País"}
-          name={"country"}
-          value={form.country}
-          onChange={onChange}
-          required
-        >
-          <option value={""} disabled>Escolha um País</option>
-          {countries.map((country) => {
-            return <option value={country} key={country}>{country}</option>
-          })}
-        </select>
+          >
+            <option value={""} disabled></option>
+            {countries.map((country) => {
+              return <option value={country} key={country}>{country}</option>
+            })}
+          </Select >
+          </FormControl>
 
+          <FormControl variant="outlined">
+          <InputLabel htmlFor='outlined-age-native-simple'>Viagens</InputLabel>
+          <Select native
+            id='outlined-age-native-simple'
+            value={form.trip}
+            onChange={onChange}
+            name={"trip"}
+            label="Viagens"
+            required>
 
-        <select value={form.trip}
-          onChange={onChange}
-          name={"trip"}
-          required>
-          <option value="" selected disabled>Escolha uma Viagem</option>
-          {mapOption}
-        </select>
+            <option value="" selected disabled></option>
+            {mapOption}
+          </Select >
+        </FormControl>
 
         <button onClick={() => { goBack(navigate) }}>voltar</button>
-        <button></button>
-      </Form>
+        <button>enviar</button>
+      </Form >
     </Container>
   );
 };
