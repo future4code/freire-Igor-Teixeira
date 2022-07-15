@@ -3,12 +3,10 @@ import { Container, Form } from "./styled";
 import { countries } from "../../Constants/Countries";
 import { useForm } from "../../Components/hoocks/useForm";
 import { url_base } from "../../Constants/URL_BASE";
-
 import { useResquestTrips } from "../../Components/hoocks/useRequestTrips";
 import { goBack } from "../../routes/Coordinator"
 import { useNavigate } from "react-router";
 import axios from "axios";
-
 
 
 
@@ -23,13 +21,6 @@ export const SingUp = () => {
     country: "",
     trip: "",
   });
-  console.log(form.name)
-  console.log(form.age)
-  console.log(form.applicationText)
-  console.log(form.profession)
-  console.log(form.country)
-  console.log(form.trip)
-
 
   const trips = useResquestTrips()
   const navigate = useNavigate()
@@ -44,18 +35,6 @@ export const SingUp = () => {
         })
       }
 
-
-
-  //   event.preventDefault()
-  //   axios.post(`${url_base}/trips/${form.trip}/apply`, form).then((res) => {
-  //     alert("Solicitação enviada com sucesso!")
-  //     cleanFields()
-  //     navigate(navigate - 1)
-  //   }).catch((error) => {
-  //     alert("Solicitação não enviada, por gentileza, verificar todos os campos e tentar novamente", error.response)
-  //   })
-  // }
-
   const mapOption = trips.map((trip) => {
     return (
       <option key={trip.id} value={trip.id}>
@@ -66,6 +45,7 @@ export const SingUp = () => {
 
   return (
     <Container>
+      
 
       <Form onSubmit={applyToTrip} >
         <h1>inscreva-se para viajem</h1>
@@ -130,7 +110,7 @@ export const SingUp = () => {
         </select>
 
         <button onClick={() => { goBack(navigate) }}>voltar</button>
-        <button>enviar</button>
+        <button></button>
       </Form>
     </Container>
   );

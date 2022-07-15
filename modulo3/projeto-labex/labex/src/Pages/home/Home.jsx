@@ -1,4 +1,5 @@
 import React from "react";
+import {Container} from "./styled"
 
 
 
@@ -8,8 +9,11 @@ export const Home = () => {
     
     
     return (
-        <div>
+        <Container>
             <h1>home</h1>  
-        </div>
+    
+    
+
+        </Container>
     )
 }

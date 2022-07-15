@@ -4,6 +4,7 @@ import { goToHome,goToLogin,goToTrips } from "../../routes/Coordinator";
 import {Container} from "./styled"
 
 
+
 export const Header = () => {
     const navigate = useNavigate();
    
