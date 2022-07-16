@@ -7,6 +7,8 @@ import {VscRocket} from 'react-icons/vsc'
 import {BiLogIn} from 'react-icons/bi'
 import {TbArrowBackUp} from 'react-icons/tb'
 import { Background } from "../../Components/background/Background";
+import Carousel from "react-multi-carousel"
+import "react-multi-carousel/lib/styles.css";
 
 
 
@@ -44,8 +46,8 @@ export const Trips = () => {
    })
 
     return (
-        <Background>
-          
+        <Background responsive={responsive}>
+          <Carousel>
         <Container>
                 <h1>viajens</h1>
             <Botoes>
@@ -56,6 +58,7 @@ export const Trips = () => {
            <ContCard>{listTrips}</ContCard> 
            
         </Container>
+        </Carousel>
         </Background>
     )
 }
