@@ -1,10 +1,12 @@
 import axios from "axios";
 import React from "react";
+import {Container} from './styled'
 import {url_base} from "../../Constants/URL_BASE"
 import {goBack} from "../../routes/Coordinator"
 import { useNavigate} from "react-router";
 import { useForm } from "../../Components/hoocks/useForm";
 import { useProtectPage } from "../../Components/hoocks/useProtectPage";
+import TextField from "@material-ui/core/TextField";
 
 export const LoginAdm = () => {
 
@@ -38,17 +40,17 @@ export const LoginAdm = () => {
 
     return (
 
-        <div>
+        <Container>
             <h1>login adm</h1>
             <form onSubmit={login}>
-            <input
-             type="email"
+            <TextField id="outlined-basic"  label="Email" variant="outlined"
+             type="email" 
             onChange={onChange}
             placeholder={"Email"}
             value={form.email}
             name={"email"} />
 
-            <input 
+            <TextField   id="outlined-basic"  label="Senha" variant="outlined"
             type="password" 
             onChange={onChange} 
             placeholder={"senha"}
@@ -57,6 +59,6 @@ export const LoginAdm = () => {
             <button onClick={()=>{goBack(navigate)}}>voltar</button>
             <button>logar</button>
             </form>
-        </div>
+        </Container>
     )
 }

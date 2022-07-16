@@ -8,11 +8,12 @@ import { goBack } from "../../routes/Coordinator"
 import { useNavigate } from "react-router";
 import axios from "axios";
 import { FormControl, TextField, Select, InputLabel } from "@material-ui/core";
+import { Background } from "../../Components/background/Background";
 
 
 
 
-export const SingUp = () => {
+export const SignUp = () => {
 
   const { form, onChange, cleanFields } = useForm({
     name: "",
@@ -45,11 +46,12 @@ export const SingUp = () => {
   })
 
   return (
+    <Background>
     <Container>
 
-
+      <h1>Inscreva-se para viagem</h1>
       <Form onSubmit={applyToTrip} variant="outlined">
-        <h1>inscreva-se para viajem</h1>
+        
         <TextField
           id="outlined-basic"
           label="Nome"
@@ -136,5 +138,6 @@ export const SingUp = () => {
         <button>enviar</button>
       </Form >
     </Container>
+    </Background>
   );
 };
