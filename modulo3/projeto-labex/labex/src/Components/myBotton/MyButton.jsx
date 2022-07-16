@@ -19,6 +19,10 @@ const Button = styled.div`
     0 0 200px #2b95e5;
     -webkit-box-reflect: below 1px linear-gradient(transparent, #241c1cdd);
 }
+@media screen and (min-device-width : 320px) and (max-device-width : 480px) {
+      padding: 4px 4px;
+     
+   }
 
 `
 

@@ -5,7 +5,9 @@ import {useNavigate} from "react-router-dom"
 import { url_base,token } from "../../Constants/URL_BASE";
 import { goBack, goToAboutPage} from "../../routes/Coordinator";
 import { useProtectPage } from "../../Components/hoocks/useProtectPage";
-
+import { Background } from "../../Components/background/Background";
+import {Card , Container} from "./styled"
+import {BsTrash} from 'react-icons/bs'
 
 
 export const PageAdm = () => {
@@ -29,23 +31,34 @@ export const PageAdm = () => {
         })
     }
     }
+    const clear = () => {
+        localStorage.clear()
+        navigate("/login")
+        
+    }
 
      const listTrips = trips.map((item)=>{
         return(
-            <li key={item.id}>
+            <Card key={item.id}>
                 <h2 onClick={()=>{goToAboutPage(navigate(`/details/${item.id}`))}}>{item.name}</h2>
-                <button onClick={()=>{deleteTrip(item.id)}}>apagar</button>
-                </li>
+                <button onClick={()=>{deleteTrip(item.id)}}><BsTrash size="20px" color="white"/></button>
+                </Card>
         )
      })
 
     return (
-        <div>
-           <button onClick={()=>{goBack(navigate)}}>voltar</button>
-           <button onClick={()=>{goToAboutPage(navigate("create"))}}>criar viagem</button >
-           <button>logout</button>
-            <h1>Adm pag</h1>
+        <Background>
+
+        <Container>
+        <h1>Painel Administrador </h1>
+           <div>
+               <button onClick={()=>{goBack(navigate)}}>voltar</button>
+               <button onClick={()=>{goToAboutPage(navigate("create"))}}>criar viagem</button >
+               <button onClick={clear}>logout</button>
+           </div>
+            
             {listTrips}
-        </div>
+        </Container>
+        </Background>
     )
 }

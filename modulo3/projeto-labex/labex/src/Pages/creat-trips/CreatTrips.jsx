@@ -6,6 +6,7 @@ import { token, url_base } from "../../Constants/URL_BASE";
 import { goBack } from "../../routes/Coordinator"
 import { Container, Form } from "./styled"
 import { planets } from "../../Constants/planets"
+import {Background} from '../../Components/background/Background'
 
 export const CreatTrip = () => {
     const navigate = useNavigate()
@@ -40,6 +41,7 @@ export const CreatTrip = () => {
 
 
     return (
+        <Background>
         <Container>
             <h1>criar viajem </h1>
             <Form onSubmit={creatTrip}>
@@ -75,7 +77,7 @@ export const CreatTrip = () => {
 
                 />
 
-                <textarea cols="30" rows="10"
+                <textarea cols="30" rows="3"
                     name={"description"}
                     onChange={onChange}
                     placeholder="digite a descrição"></textarea>
@@ -93,5 +95,6 @@ export const CreatTrip = () => {
             </Form>
             <button onClick={() => { goBack(navigate) }}>voltar</button>
         </Container>
+        </Background>
     )
 }

@@ -1,25 +1,41 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    color: white;
-    animation: gradient 15s ease infinite;
-    background: linear-gradient(-45deg, #011523, #062a45, #042c4a, #2b95e5) no-repeat;
-    background-size: 300% 300%;
-    height: 92vh;
-    
-    text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
 
-@keyframes gradient {
-    0% {
-        background-position: 0 50%;
-    }
+  .carousel-perso {
+    height: 300px;
+  }
+`;
+export const Img = styled.img`
+  width: 160px;
+  height: 190px;
+  border-radius: 15px;
+  margin: 3px;
+  -webkit-box-shadow: -2px 18px 38px 12px #00000050;
+  box-shadow: -2px 18px 38px 12px #00000033;
+`;
 
-    50% {
-        background-position: 100% 50%;
-    }
+export const CardImg = styled.div`
+  background-color: #00000046;
+  border-radius: 15px;
+  -webkit-box-shadow: 2px -3px 36px 16px #0000004b;
+  box-shadow: 2px -3px 36px 16px #00000038;
+  width: 200px;
+  height: 250px;
+  margin: 15px;
+`;
 
-    100% {
-        background-position: 0 50%;
-    }
-}
-`
+export const Logo = styled.div`
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  justify-content: space-around;
+
+  img {
+    width: 600px;
+    height: 90%;
+  }
+`;

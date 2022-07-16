@@ -7,6 +7,7 @@ import { useNavigate} from "react-router";
 import { useForm } from "../../Components/hoocks/useForm";
 import { useProtectPage } from "../../Components/hoocks/useProtectPage";
 import TextField from "@material-ui/core/TextField";
+import { Background } from "../../Components/background/Background";
 
 export const LoginAdm = () => {
 
@@ -39,7 +40,7 @@ export const LoginAdm = () => {
     }
 
     return (
-
+        <Background>
         <Container>
             <h1>login adm</h1>
             <form onSubmit={login}>
@@ -60,5 +61,6 @@ export const LoginAdm = () => {
             <button>logar</button>
             </form>
         </Container>
+        </Background>
     )
 }

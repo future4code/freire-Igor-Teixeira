@@ -6,7 +6,7 @@ export const Background =styled.div`
     animation: gradient 15s ease infinite;
     background: linear-gradient(-45deg, #011523, #062a45, #042c4a, #2b95e5) no-repeat;
     background-size: 300% 300%;
-    height: 99vh;
+    height: 93vh;
     
     text-align: center;
 
