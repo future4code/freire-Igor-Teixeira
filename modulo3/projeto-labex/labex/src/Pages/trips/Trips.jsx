@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Container,
-  Card,
-  Title,
-  Text,
-  Botoes,
-  ButtonInsc,
-} from "./styled";
+import { Container, Card, Title, Text, Botoes, ButtonInsc } from "./styled";
 import { goToAboutPage, goToHome } from "../../routes/Coordinator";
 import { useNavigate } from "react-router-dom";
 import { useResquestTrips } from "../../Components/hoocks/useRequestTrips";
@@ -45,7 +38,7 @@ export const Trips = () => {
     return (
       <Card key={item.id}>
         <Title>
-          {item.name} <VscRocket />{" "}
+          {item.name} {" "}
         </Title>
         <Text>
           <strong>Descrição: </strong>
@@ -98,15 +91,15 @@ export const Trips = () => {
           </button>
         </Botoes>
         <div className="BoxCarousel">
-        <Carousel
-          showDots={true}
-          responsive={responsive}
-          removeArrowOnDeviceType={["tablet", "mobile"]}
-          itemClass="CarouselPersonalizacao"
-          focusOnSelect={true}
-        >
-          {listTrips}
-        </Carousel>
+          <Carousel
+            showDots={true}
+            responsive={responsive}
+            removeArrowOnDeviceType={["tablet", "mobile"]}
+            itemClass="CarouselPersonalizacao"
+            focusOnSelect={true}
+          >
+            {listTrips}
+          </Carousel>
         </div>
       </Container>
     </Background>

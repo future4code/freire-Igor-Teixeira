@@ -26,9 +26,11 @@ const responsive = {
   },
 };
 
-const listImg = imgTrips.map((img)=>{
+
+
+const listImg = imgTrips.map((item)=>{
   return (
-    <CardImg key={img}><Img src={img} alt="d" /></CardImg>
+    <CardImg key={item.img}><Img src={item.img} alt="fotos do espaço" /><p>{item.frase}</p></CardImg>
     
   )
 
@@ -37,14 +39,17 @@ const listImg = imgTrips.map((img)=>{
 export const Home = () => {
   return (
     <Background>
+      
     <Container>
       <Logo><img src={logo1} alt="imagem" /></Logo>
       <Carousel 
       responsive={responsive}
       itemClass="carousel-perso"
+      removeArrowOnDeviceType={["tablet", "mobile"]}
       >
       {listImg} 
       </Carousel>
+     
     </Container>
     </Background>
   );

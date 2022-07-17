@@ -2,23 +2,21 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   color: #fffbfb;
-  .BoxCarousel{
-        cursor: grab;
-        user-select: none;
-        
+  .BoxCarousel {
+    cursor: grab;
+    user-select: none;
+  }
+  .BoxCarousel:active {
+    cursor: grabbing;
+  }
 
-    }
-    .BoxCarousel:active{
-        cursor: grabbing;
-    }
-    
- .CarouselPersonalizacao{
-        margin: 50px 0px;
-    }
+  .CarouselPersonalizacao {
+    margin: 50px 0px;
+  }
 
-    h1{
-      margin:40px;
-    }
+  h1 {
+   padding: 30px;
+  }
 `;
 export const Botoes = styled.div`
   display: flex;
@@ -34,7 +32,7 @@ export const Botoes = styled.div`
 //   gap: 10px;
 //   margin: 10px 10px;
 //   font-family: "Comfortaa", cursive;
- 
+
 // `;
 
 export const Card = styled.li`
@@ -48,7 +46,9 @@ export const Card = styled.li`
   box-shadow: inset 45px 45px 74px #041d2f, inset -45px -45px 74px #08375b;
   font-family: "Comfortaa", cursive;
 
- 
+  @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    width: 99vw;
+  }
 `;
 
 export const Title = styled.h3`
@@ -57,27 +57,20 @@ export const Title = styled.h3`
 `;
 export const Text = styled.p`
   margin: 10px;
-`
+`;
 export const ButtonInsc = styled.div`
-    margin:0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-
-    button{
-      border-radius:50px;
-      width: 35px;
-      height: 35px;
-      background-color: #035390;
-    }
-    button:hover{
-        background-color:#072a45;
-       
-        
-      }
-      
-
-
- 
-`
+  button {
+    border-radius: 50px;
+    width: 35px;
+    height: 35px;
+    background-color: #035390;
+  }
+  button:hover {
+    background-color: #072a45;
+  }
+`;

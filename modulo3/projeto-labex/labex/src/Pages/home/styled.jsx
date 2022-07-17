@@ -7,11 +7,20 @@ export const Container = styled.div`
 
   .carousel-perso {
     height: 300px;
+    cursor: grab;
+    user-select: none;
+  }
+  .carousel-perso:active {
+    cursor: grabbing;
+  }
+  .react-multi-carousel-item {
+    display: flex;
+    justify-content: center;
   }
 `;
 export const Img = styled.img`
   width: 160px;
-  height: 190px;
+  height: 150px;
   border-radius: 15px;
   margin: 3px;
   -webkit-box-shadow: -2px 18px 38px 12px #00000050;
@@ -26,6 +35,10 @@ export const CardImg = styled.div`
   width: 200px;
   height: 250px;
   margin: 15px;
+
+  p{
+    margin : 5px;
+  }
 `;
 
 export const Logo = styled.div`
@@ -33,6 +46,10 @@ export const Logo = styled.div`
   height: 50vh;
   display: flex;
   justify-content: space-around;
+
+  @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    height: 44vh;
+  }
 
   img {
     width: 600px;

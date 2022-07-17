@@ -6,11 +6,11 @@ export const Container = styled.div`
   flex-direction: column;
   gap: 10px;
   div {
-    justify-content: space-between;
+    justify-content: space-evenly;
     display: flex;
     flex-direction: row;
     width: 450px;
-    margin: 15px;
+    margin: 15px 15px;
   }
 `;
 

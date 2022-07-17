@@ -14,20 +14,18 @@ export const PageAdm = () => {
     useProtectPage()
         const trips = useResquestTrips()
         const navigate = useNavigate() 
-        useEffect(() => {
-            
+        useEffect(() => {    
         }, [trips])
 
     const deleteTrip = (id) => {
-        if(window.confirm("deseja realmente apagar ?")){
+        if(window.confirm("Deseja realmente apagar ?")){
         axios.delete(`${url_base}/trips/${id}`,token)
         .then((res) => {
-            console.log("apagado",res.data)
-            alert("apagado")
+            alert("Deletado com sucesso")
+
         })
         .catch((error) => { 
-            console.log("Erro",error.res)
-            alert(error)
+            alert(error,"Tivemos algum problema tente mais tarde.")
         })
     }
     }
