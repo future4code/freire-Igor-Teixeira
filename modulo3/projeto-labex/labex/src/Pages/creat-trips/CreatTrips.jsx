@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "../../Components/hoocks/useForm";
 import { token, url_base } from "../../Constants/URL_BASE";
 import { goBack } from "../../routes/Coordinator";
-import { Container, Form ,Button} from "./styled";
+import { Container, Form, Button } from "./styled";
 import { planets } from "../../Constants/planets";
 import { Background } from "../../Components/background/Background";
 import { TextField, Select, FormControl, InputLabel } from "@material-ui/core";
@@ -42,7 +42,7 @@ export const CreatTrip = () => {
   return (
     <Background>
       <Container>
-        <h1>criar viajem </h1>
+        <h1>Criar viajem </h1>
 
         <Form onSubmit={creatTrip}>
           <TextField
@@ -110,17 +110,16 @@ export const CreatTrip = () => {
           </FormControl>
 
           <Button>
-              <button>criar</button>
-              <button
+            <button
               onClick={() => {
                 goBack(navigate);
               }}
-                      >
+            >
               voltar
-                      </button>
+            </button>
+            <button>criar</button>
           </Button>
         </Form>
-        
       </Container>
     </Background>
   );

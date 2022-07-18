@@ -5,6 +5,9 @@ export const Container = styled.div`
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
+  h1 {
+    margin: 20px;
+  }
 
   input {
     width: 300px;
@@ -15,7 +18,7 @@ export const Container = styled.div`
   }
 `;
 export const Form = styled.form`
-  background-color: #6188f0;
+  background-color: #f4f4f47c;
   display: flex;
   flex-direction: column;
   text-align: center;

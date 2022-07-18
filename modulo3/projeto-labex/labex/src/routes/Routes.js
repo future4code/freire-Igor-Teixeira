@@ -9,6 +9,7 @@ import { CreatTrip } from "../Pages/creat-trips/CreatTrips";
 import { SignUp } from "../Pages/sign-up/SignUp";
 import { Header } from "../Components/header/Header";
 import { Footer } from "../Components/footer/Footer";
+import { WhoWeAre } from "../Pages/whoWeare/WhoWeAre";
 
 
 export const Router = () => {
@@ -23,6 +24,7 @@ export const Router = () => {
                 <Route path="login/pageAdm" element={<PageAdm/>}/>
                 <Route path="login/pageAdm/create" element={<CreatTrip/>}/>
                 <Route path="trips/sing" element={<SignUp/>}/>
+                <Route path="whoweare" element={<WhoWeAre/>}/> 
             </Routes>
             <Footer/>
             </BrowserRouter>

@@ -1,24 +1,28 @@
 import React, { useEffect, useState } from "react";
-import { url_base ,token} from "../../Constants/URL_BASE";
+import { url_base, token } from "../../Constants/URL_BASE";
 import axios from "axios";
-import { useParams,useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useProtectPage } from "../../Components/hoocks/useProtectPage";
 import { goBack } from "../../routes/Coordinator";
+import { TbArrowBackUp } from "react-icons/tb";
+import { AiOutlineLike } from "react-icons/ai";
+import { AiOutlineDislike } from "react-icons/ai";
+
+import { Container, Card, Aprov } from "./style";
 
 export const Details = () => {
   useProtectPage();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [details, setDetails] = useState([]);
   const [candidate, setCandidate] = useState([]);
   const [aprovados, setAprovados] = useState([]);
-
 
   const pathParams = useParams();
   const id = pathParams.id;
 
   const getTripDetail = () => {
     axios
-      .get(`${url_base}/trip/${id}`,token)
+      .get(`${url_base}/trip/${id}`, token)
       .then((res) => {
         setDetails(res.data.trip);
         setCandidate(res.data.trip.candidates);
@@ -35,7 +39,11 @@ export const Details = () => {
       approve: choise,
     };
     axios
-      .put(`${url_base}/trips/${id}/candidates/${candidateId}/decide`, body,token)
+      .put(
+        `${url_base}/trips/${id}/candidates/${candidateId}/decide`,
+        body,
+        token
+      )
       .then((res) => {
         alert(`Candidato ${choise ? "Aprovado" : "Reprovado"} com sucesso`);
         getTripDetail();
@@ -57,20 +65,22 @@ export const Details = () => {
         <p>{item.applicationText}</p>
         <p>{item.profession}</p>
         <p>{item.country}</p>
-        <button
-          onClick={() => {
-            decideCandidate(true, item.id);
-          }}
-        >
-          apro
-        </button>
-        <button
-          onClick={() => {
-            decideCandidate(false, item.id);
-          }}
-        >
-          repro
-        </button>
+        <Aprov>
+          <button
+            onClick={() => {
+              decideCandidate(true, item.id);
+            }}
+          >
+            <AiOutlineLike size="25px" color="green" />
+          </button>
+          <button
+            onClick={() => {
+              decideCandidate(false, item.id);
+            }}
+          >
+            <AiOutlineDislike size="25px" color="red" />
+          </button>
+        </Aprov>
       </li>
     );
   });
@@ -84,24 +94,32 @@ export const Details = () => {
   });
 
   return (
-    <div>
-      <button onClick={()=>{goBack(navigate)}}>voltar</button>
-      <div>
-        <h1>detalhes</h1>
-        <p>{details.name}</p>
-        <p>{details.description}</p>
-        <p>{details.planet}</p>
-        <p>{details.durationInDays}</p>
-        <p>{details.date}</p>
-      </div>
-      <h1>Candidatos</h1>
-      <div>{listCandidates}</div>
-      <h1>Aprovados</h1>
-      {listAprovados}
+    <Container>
+      <button
+        onClick={() => {
+          goBack(navigate);
+        }}
+      >
+        voltar <TbArrowBackUp />{" "}
+      </button>
+      <Card>
+        <h2>Detalhes</h2>
+        <p>Nome: {details.name}</p>
+        <p>Descrição: {details.description}</p>
+        <p>Planeta: {details.planet}</p>
+        <p>Duração: {details.durationInDays}</p>
+        <p>Data: {details.date}</p>
+      </Card>
 
-      
-    
-      
-    </div>
+      <Card>
+        <h2>Candidatos</h2>
+        {listCandidates}
+      </Card>
+
+      <Card>
+        <h2>Aprovados</h2>
+        {listAprovados}
+      </Card>
+    </Container>
   );
 };

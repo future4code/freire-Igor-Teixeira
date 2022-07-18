@@ -1,10 +1,13 @@
 import React from "react";
-import { Container,Img,CardImg, Logo } from "./styled";
+import { Container, Img, CardImg, Logo, Who } from "./styled";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import {imgTrips} from '../../Constants/ImgTrips'
-import {Background} from "../../Components/background/Background"
-import logo1 from '../../Assets/logo1.png'
+import { imgTrips } from "../../Constants/ImgTrips";
+import { Background } from "../../Components/background/Background";
+import logo1 from "../../Assets/logo1.png";
+import { goToAboutPage } from "../../routes/Coordinator";
+import { Navigate, useNavigate } from "react-router-dom";
+import { FaUsers } from "react-icons/fa";
 
 const responsive = {
   superLargeDesktop: {
@@ -26,31 +29,40 @@ const responsive = {
   },
 };
 
-
-
-const listImg = imgTrips.map((item)=>{
+const listImg = imgTrips.map((item) => {
   return (
-    <CardImg key={item.img}><Img src={item.img} alt="fotos do espaço" /><p>{item.frase}</p></CardImg>
-    
-  )
-
-})
+    <CardImg key={item.img}>
+      <Img src={item.img} alt="fotos do espaço" />
+      <p>{item.frase}</p>
+    </CardImg>
+  );
+});
 
 export const Home = () => {
+  const navigate = useNavigate();
   return (
     <Background>
-      
-    <Container>
-      <Logo><img src={logo1} alt="imagem" /></Logo>
-      <Carousel 
-      responsive={responsive}
-      itemClass="carousel-perso"
-      removeArrowOnDeviceType={["tablet", "mobile"]}
-      >
-      {listImg} 
-      </Carousel>
-     
-    </Container>
+      <Container>
+        <Logo>
+          <img src={logo1} alt="imagem" />
+          <div>
+            <Who
+              onClick={() => {
+                goToAboutPage(navigate("/whoweare"));
+              }}
+            >
+              Quem Somos ?<FaUsers />
+            </Who>
+          </div>
+        </Logo>
+        <Carousel
+          responsive={responsive}
+          itemClass="carousel-perso"
+          removeArrowOnDeviceType={["tablet", "mobile"]}
+        >
+          {listImg}
+        </Carousel>
+      </Container>
     </Background>
   );
 };

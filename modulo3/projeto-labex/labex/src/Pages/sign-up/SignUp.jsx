@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Form , Button } from "./styled";
+import { Container, Form, Button } from "./styled";
 import { countries } from "../../Constants/Countries";
 import { useForm } from "../../Components/hoocks/useForm";
 import { url_base } from "../../Constants/URL_BASE";
@@ -9,7 +9,7 @@ import { useNavigate } from "react-router";
 import axios from "axios";
 import { FormControl, TextField, Select, InputLabel } from "@material-ui/core";
 import { Background } from "../../Components/background/Background";
-import {VscRocket } from "react-icons/vsc";
+import { VscRocket } from "react-icons/vsc";
 import { TbArrowBackUp } from "react-icons/tb";
 
 export const SignUp = () => {
@@ -146,9 +146,12 @@ export const SignUp = () => {
                 goBack(navigate);
               }}
             >
-              voltar<TbArrowBackUp/>
+              voltar
+              <TbArrowBackUp />
             </button>
-            <button>enviar <VscRocket/></button>
+            <button>
+              enviar <VscRocket />
+            </button>
           </Button>
         </Form>
       </Container>

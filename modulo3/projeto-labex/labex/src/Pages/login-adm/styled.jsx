@@ -7,9 +7,15 @@ export const Container =styled.div`
     padding: 30px;
 
 form{
-    padding: 20px;
-    display: flex;
-    gap:15px;
+    background-color: #f4f4f47c;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 15px;
+  width: 300px;
+  margin: 15px auto;
+  padding: 10px;
+  gap: 10px;
 }
 
 

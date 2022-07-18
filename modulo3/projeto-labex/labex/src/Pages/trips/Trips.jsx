@@ -37,9 +37,7 @@ export const Trips = () => {
   const listTrips = trips.map((item) => {
     return (
       <Card key={item.id}>
-        <Title>
-          {item.name} {" "}
-        </Title>
+        <Title>{item.name} </Title>
         <Text>
           <strong>Descrição: </strong>
           {item.description}

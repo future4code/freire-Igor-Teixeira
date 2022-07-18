@@ -9,6 +9,13 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+   
+    h1{
+      text-shadow: 5px 1px 5px #00000099;
+      text-transform: uppercase;
+      font-size: 24px;
+      
+    }
     
     
     button{
@@ -22,6 +29,8 @@ const GlobalStyle = createGlobalStyle`
       display:flex;
       align-items: center;
       justify-content: space-evenly;
+      text-shadow: 5px 1px 5px #00000099;
+      
     }
       button:hover{
         background-color: #2b95e5;
@@ -38,16 +47,14 @@ const GlobalStyle = createGlobalStyle`
 
 `;
 
-const Container = styled.div`
-  background-color: #011523;
-`;
+
 
 function App() {
   return (
-    <Container>
+    <div>
       <GlobalStyle />
       <Router />
-    </Container>
+    </div>
   );
 }
 

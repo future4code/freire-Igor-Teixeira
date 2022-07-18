@@ -15,7 +15,7 @@ export const Container = styled.div`
   }
 
   h1 {
-   padding: 30px;
+    padding: 30px;
   }
 `;
 export const Botoes = styled.div`
@@ -42,9 +42,10 @@ export const Card = styled.li`
   padding: 20px;
   text-align: left;
   border-radius: 21px;
-  background: #062a45;
-  box-shadow: inset 45px 45px 74px #041d2f, inset -45px -45px 74px #08375b;
+  background: #0f5e9a;
+  box-shadow: inset 45px 45px 74px #0b3858, inset -45px -45px 74px #08375b;
   font-family: "Comfortaa", cursive;
+  text-shadow: 5px 1px 5px #00000099;
 
   @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
     width: 99vw;

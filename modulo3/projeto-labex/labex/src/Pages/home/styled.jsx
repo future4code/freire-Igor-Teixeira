@@ -36,8 +36,8 @@ export const CardImg = styled.div`
   height: 250px;
   margin: 15px;
 
-  p{
-    margin : 5px;
+  p {
+    margin: 5px;
   }
 `;
 
@@ -46,6 +46,8 @@ export const Logo = styled.div`
   height: 50vh;
   display: flex;
   justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
 
   @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
     height: 44vh;
@@ -54,5 +56,16 @@ export const Logo = styled.div`
   img {
     width: 600px;
     height: 90%;
+    @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+      width: 90vw;
+    }
   }
+`;
+
+export const Who = styled.button`
+  color: white;
+  background-color: #166fea55;
+  margin-bottom: 15px;
+  width: 150px;
+  height: 40px;
 `;
