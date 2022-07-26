@@ -1,6 +1,7 @@
-import { TextField,Button,Checkbox } from "@material-ui/core";
+// import { TextField,Button,Checkbox } from "@material-ui/core";
 import React from "react";
 import {Form,Container,Check,Text} from "./Styled"
+import { TextField,Button ,Checkbox} from "@mui/material";
 
 
 export const SignUpPage = () => {

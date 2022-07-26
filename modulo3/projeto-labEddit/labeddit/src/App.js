@@ -1,6 +1,6 @@
 import { Router } from "../src/routes/Router";
 import {theme} from "./constants/theme"
-import {ThemeProvider} from '@material-ui/core'
+import {ThemeProvider} from '@mui/material'
 
 
 const App = () =>{
