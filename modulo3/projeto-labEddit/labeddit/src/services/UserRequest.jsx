@@ -16,7 +16,7 @@ import { goToFeed } from "../routes/Coordinator"
 }
 
 export const SignUp = (form,clear,navigate) => {
-    axios.post(`${baseUrl}/users/login`,form)
+    axios.post(`${baseUrl}/users/signup`,form)
     .then((res)=>{
         localStorage.setItem("token",res.data.token)
         console.log("deu certo",res.data)

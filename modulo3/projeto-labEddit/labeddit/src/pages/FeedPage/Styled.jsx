@@ -1,6 +1,9 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
-export const Card = styled.div`
-    border: 1px solid black;
-    
+export const Container = styled.div`
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    gap :10px ; 
+    align-items: center;
 `
