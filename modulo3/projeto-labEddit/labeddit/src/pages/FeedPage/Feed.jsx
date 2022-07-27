@@ -3,36 +3,18 @@ import {Card} from '../../components/Card/Card'
 import axios from 'axios'
 import { baseUrl,token } from "../../constants/BaseUrl";
 import {Container} from './Styled'
-
-
-
+import {Button} from '@mui/material'
+import {CreatePostVote} from '../../services/VoteRequest'
+import {goToPost} from '../../routes/Coordinator'
+import { useNavigate } from "react-router-dom";
 
 export const FeedPage = () => {
 
-        const CreatePostVote = (id) => {
-        const body = {
-            direction: 1
-        }
-        axios.post(`${baseUrl}/posts/${id}/votes`,body,token)
-        .then((res)=>{
-            console.log(res.data)
-        }).catch((err)=>{
-            alert(err)
-            console.log(err.response.data)
-        })  
-    }
-
-    // const GetPostComments = (id) => {
-    //     axios.get(`${baseUrl}/posts/${id}/comments`,token)
-    // }
-
-
-
-
+    const navigate = useNavigate()
     const allPosts = GetPost()
-    console.log(allPosts)
     const listPost = allPosts && allPosts.map((item,index)=>{
         return <Card key={index}
+            id={item.id}
             title={item.title}
             username={item.username}
             body={item.body}
@@ -43,7 +25,9 @@ export const FeedPage = () => {
 
     return(
         <Container>
-            {listPost}
+            <Button onClick={()=>goToPost(navigate)} type={"submit"}variant="contained" color="primary" style={{ background: 'linear-gradient(to right, #FE5D5D, #FE6D6B,#FCAAA3),#FAC1B8'}}>Criar post</Button>
+            
+            {listPost} 
         </Container>
     )
 }

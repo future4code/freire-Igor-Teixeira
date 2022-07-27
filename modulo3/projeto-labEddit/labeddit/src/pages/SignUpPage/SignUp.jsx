@@ -1,7 +1,7 @@
 // import { TextField,Button,Checkbox } from "@material-ui/core";
-import React from "react";
+import React, { useState } from "react";
 import {Form,Container,Check,Text} from "./Styled"
-import { TextField,Button ,Checkbox} from "@mui/material";
+import { TextField,Button ,Switch,FormGroup,FormControlLabel} from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import {useForm} from '../../hoocks/UseForm'
 import {SignUp} from '../../services/UserRequest'
@@ -10,6 +10,8 @@ import {SignUp} from '../../services/UserRequest'
 export const SignUpPage = () => {
 
     const navigate = useNavigate()
+    const [checked,setChecked] = useState()
+    console.log(checked)
     const { form ,onChange,clear} = useForm({
         username:"",
         email:"",
@@ -20,6 +22,10 @@ export const SignUpPage = () => {
         event.preventDefault()
         SignUp(form,clear,navigate)
 
+
+    }
+    const onChangeTermo = (event) =>{
+        setChecked(event.target.checked)
 
     }
 
@@ -60,9 +66,9 @@ export const SignUpPage = () => {
                     <p>Ao continuar, você concorda com o nosso Contrato de usuário e nossa Política de Privacidade</p>
                 </Text>
                 <Check>
-                    <Checkbox checked={false}
-                    onChange={''}/>
-                    <p>Eu concordo em receber emails sobre coisas legais no Labeddit</p>
+                <FormGroup>
+                    <FormControlLabel control={<Switch onChange={onChangeTermo} required/>} label="Eu concordo em receber emails sobre coisas legais no Labeddit" />
+                </FormGroup>
                 </Check>
                 <Button type={"submit"}variant="contained" color="primary" style={{ background: 'linear-gradient(to right, #FE5D5D, #FE6D6B,#FCAAA3),#FAC1B8'}}>SignUp</Button>
            

@@ -5,13 +5,14 @@ import {GlobalStateContext} from './GlobalStateContext'
 
 export const GlobalState = (props) => {
 
-    const [id,setId] = useState([])
+    
+    const[comment,setComment]  = useState([])
     
     
 
     return (
         <div>
-        <GlobalStateContext.Provider value={{id,setId}}> 
+        <GlobalStateContext.Provider value={{comment,setComment}}> 
          {props.children}
          </GlobalStateContext.Provider> 
         </div>

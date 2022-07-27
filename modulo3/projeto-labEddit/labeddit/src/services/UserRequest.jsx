@@ -19,11 +19,11 @@ export const SignUp = (form,clear,navigate) => {
     axios.post(`${baseUrl}/users/signup`,form)
     .then((res)=>{
         localStorage.setItem("token",res.data.token)
-        console.log("deu certo",res.data)
+        alert('cadastro realizado com sucesso')
         clear()
         goToFeed(navigate)
     }).catch((err)=>{
-        alert(err)
+        alert(err.response.data.message)
     })
 
 }
