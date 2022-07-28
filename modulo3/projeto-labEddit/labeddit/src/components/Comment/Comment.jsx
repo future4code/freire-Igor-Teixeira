@@ -4,8 +4,9 @@ import {CreateComment} from '../../services/CreatPost'
 import {GlobalStateContext} from '../../Global/GlobalStateContext'
 import { useContext, useEffect } from "react"
 import{GetPostComments } from '../../services/PostRequest'
-import {CardComment,Container,User,Text} from './Styled'
+import {CardComment,Container,User,Text,Form} from './Styled'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 
 
 
@@ -40,7 +41,7 @@ export const Comment = (props) =>{
 
     return(
         <Container>
-            <form onSubmit={submit}>
+            <Form onSubmit={submit}>
                 <TextField
                id="outlined-multiline-flexible"
                 placeholder="Digite seu comentario ..."
@@ -51,8 +52,8 @@ export const Comment = (props) =>{
                 value={form.body}
                 required
                 />
-                <Button type={"submit"}>bot</Button>
-            </form>
+                <Button type={"submit"}><SendOutlinedIcon/></Button>
+            </Form>
 
             {listComment}
 

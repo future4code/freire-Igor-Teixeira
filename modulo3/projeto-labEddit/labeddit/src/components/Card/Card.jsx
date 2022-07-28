@@ -25,8 +25,9 @@ export const Card = (props) => {
                 <Text>{props.body}</Text>  
                <Reactions>
                    <Badge color={'primary'} badgeContent={props.voteSum > 0 ? props.voteSum : 0}>
-                    <ThumbUpIcon onClick={props.button}/>
+                    <ThumbUpIcon  onClick={props.button}/>
                     </Badge>
+
                     <Badge color={'primary'} badgeContent={props.voteSum < 0 ? props.voteSum : 0}>
                     <ThumbDownIcon/>
                     </Badge>

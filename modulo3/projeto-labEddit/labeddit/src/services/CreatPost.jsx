@@ -3,6 +3,7 @@ import axios from 'axios'
 import { baseUrl, token } from "../constants/BaseUrl";
 
 
+
 export const CreatePost = (form ,clear) =>{
     axios.post(`${baseUrl}/posts`,form,token)
     .then((res)=>{

@@ -10,7 +10,8 @@ export const GetPost = () => {
     useEffect(()=>{
     axios.get(`${baseUrl}/posts`,token).then((res)=>{
         setPosts(res.data)
-        console.log("deu boa ",res.data)
+        console.log("deu boa ",res.data);
+        
     }).catch((err)=>{
         alert(err.reponse.data.message)
     })

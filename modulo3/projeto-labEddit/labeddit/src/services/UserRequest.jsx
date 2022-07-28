@@ -1,10 +1,12 @@
 import axios from "axios"
+import { useEffect } from "react"
 import { baseUrl } from "../constants/BaseUrl"
 import { goToFeed } from "../routes/Coordinator"
 
 
 
  export const Login = (form,clear,navigate) => { 
+    
     axios.post(`${baseUrl}/users/login`,form)
     .then((res)=>{
         localStorage.setItem("token", res.data.token)
@@ -13,6 +15,7 @@ import { goToFeed } from "../routes/Coordinator"
     }).catch((err)=>{
         alert(err)
     })
+
 }
 
 export const SignUp = (form,clear,navigate) => {

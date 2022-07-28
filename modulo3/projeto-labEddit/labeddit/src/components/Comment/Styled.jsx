@@ -6,6 +6,12 @@ export const Container = styled.div`
     gap : 3px;
     margin-bottom: 5px;
 
+   
+
+`
+export const Form = styled.form`
+    display: flex;
+    align-items: center;
 `
 
 export const CardComment = styled.li`
