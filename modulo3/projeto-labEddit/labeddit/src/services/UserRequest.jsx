@@ -1,12 +1,11 @@
 import axios from "axios"
-import { useEffect } from "react"
 import { baseUrl } from "../constants/BaseUrl"
 import { goToFeed } from "../routes/Coordinator"
 
+console.log(window.localStorage)
 
 
  export const Login = (form,clear,navigate) => { 
-    
     axios.post(`${baseUrl}/users/login`,form)
     .then((res)=>{
         localStorage.setItem("token", res.data.token)

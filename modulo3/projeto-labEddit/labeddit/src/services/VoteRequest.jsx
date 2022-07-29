@@ -1,21 +1,30 @@
-import axios from "axios"
-import {  useState,useEffect } from "react"
-import { baseUrl,token } from "../constants/BaseUrl"
+import axios from "axios";
+import { baseUrl, token } from "../constants/BaseUrl";
+import {GetPostComments,GetPost} from "./PostRequest"
 
-
-
-
+const body = {
+    direction: 1,
+  };
 export const CreatePostVote = (id) => {
-    const body = {
-        direction: 1
-    }
-    axios.post(`${baseUrl}/posts/${id}/votes`,body,token)
-    .then((res)=>{
-        console.log(res.data);
-       
-    }).catch((err)=>{
-        alert(err)
-        console.log(err.response.data)
-    })  
-}
+  axios
+    .post(`${baseUrl}/posts/${id}/votes`, body, token)
+    .then((res) =>{
+      console.log(res.data)
+      GetPost()
+     
+    })
+
+    .catch((err) => alert(err.response.data.message));
+};
+
+export const CreateCommentVote = (id) => {
+    axios.post(`${baseUrl}/comments/${id}/votes`,body , token)
+    .then((res) =>{ 
+      
+      console.log(res.data)
+      GetPostComments()
+    })
+    .catch((err) => alert(err.response.data.message))
+};
+
 

@@ -1,9 +1,10 @@
 
 import React from "react"
-import {Container,Button,Img } from "./Styled"
+import {Container,Img } from "./Styled"
 import logo from '../../assets/logoH.png'
 import { goToLogin } from "../../routes/Coordinator"
 import {useNavigate} from 'react-router-dom'
+import { Button } from "@mui/material"
 
 export const Header = () => {
     const token = localStorage.getItem("token")
@@ -17,7 +18,7 @@ export const Header = () => {
     return(
         <Container>
             <Img src={logo} alt="" />
-        {token ? <Button onClick={()=>{logout()}}>logout</Button> : <Button onClick={()=>{goToLogin(navigate)}} >Login</Button>}
+        {token ? <Button color={"secondary"}  onClick={()=>{logout()}}>logout</Button> : <Button  onClick={()=>{goToLogin(navigate)}} >Login</Button>}
         </Container>
 
     )

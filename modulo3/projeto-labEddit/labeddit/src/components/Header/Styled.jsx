@@ -2,17 +2,17 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     display:flex;
-    justify-content: flex-end;
+    justify-content: space-around;
     align-items: center;
     background-color: #FD847F;
-    width: 100vw;
+   
     height: 7vh;
-`
-export const Button = styled.button`
-    margin: 0 10px;
+    button{
+        position:fixed;
+        right: 5px;
 
+    }
 `
 export const Img = styled.img`
-    margin: 0 23%;
     height: 95%;
     `

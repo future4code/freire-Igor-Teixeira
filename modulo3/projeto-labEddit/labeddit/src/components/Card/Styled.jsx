@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    background-color: #f1ebeb;
+    background-color: #d6cfcf;
     word-wrap: break-word;
-    width: 290px;
-    border-top:1px solid  #cdc3c3;
+    width: 88vw;
+    border-top:1px solid  #9c9191;
     padding: 0 10px;
     border-radius:5px;
-    border-left: 20px solid #f0eeee;
+    border-left: 20px solid #d6cfcf;
     border-bottom: 20px solid transparent;
     background-clip: padding-box;
          

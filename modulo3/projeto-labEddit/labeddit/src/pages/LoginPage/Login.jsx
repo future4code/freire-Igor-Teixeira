@@ -6,9 +6,11 @@ import {Login} from '../../services/UserRequest'
 import {useNavigate} from "react-router-dom"
 import {useForm} from '../../hoocks/UseForm'
 import { goToSignUp } from "../../routes/Coordinator";
+import {useUnProtectedPage} from '../../hoocks/UseUnProtected'
 
 
 export const LoginPage = () => {
+    useUnProtectedPage()
     const navigate = useNavigate()
     const { form ,onChange,clear} = useForm({
         email:"",
@@ -18,8 +20,6 @@ export const LoginPage = () => {
     const submit = (event) => {
         event.preventDefault()
         Login(form,clear,navigate)
-
-
     }
 
     return(
@@ -57,9 +57,8 @@ export const LoginPage = () => {
             <Border />
             
             <Button onClick={()=>{goToSignUp(navigate)}}variant="outlined" color="secondary" >Crie uma conta!</Button>
-
             </Form>
-            
+          
         </Container>
     )
 }

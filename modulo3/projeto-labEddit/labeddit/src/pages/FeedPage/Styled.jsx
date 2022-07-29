@@ -6,4 +6,9 @@ export const Container = styled.div`
     flex-direction: column;
     gap :10px ; 
     align-items: center;
+  
+
+    button{
+        width:250px;
+    }
 `

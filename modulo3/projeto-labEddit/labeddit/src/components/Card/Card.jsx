@@ -16,9 +16,15 @@ export const Card = (props) => {
         setCommentSection(!commentSection)
         
      }
-
+    //  navigator.share({})
+     
+     
     return(
         <Container >
+            
+               <a href="https://www.facebook.com/sharer/sharer.php?window.location.href=">
+                   <ThumbUpIcon />
+               </a>
                 <Send>Enviado por: <u>{props.username}</u></Send>
                 <Title>{props.title}</Title>
                 
@@ -29,7 +35,7 @@ export const Card = (props) => {
                     </Badge>
 
                     <Badge color={'primary'} badgeContent={props.voteSum < 0 ? props.voteSum : 0}>
-                    <ThumbDownIcon/>
+                    <ThumbDownIcon onClick={props.buttonPut}/>
                     </Badge>
                     <Badge color={"primary"} badgeContent={props.commentCount}><ChatIcon onClick={comment}/></Badge>
                     

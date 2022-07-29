@@ -5,11 +5,15 @@ import { TextField,Button ,Switch,FormGroup,FormControlLabel} from "@mui/materia
 import { useNavigate } from "react-router-dom";
 import {useForm} from '../../hoocks/UseForm'
 import {SignUp} from '../../services/UserRequest'
+import { useContext } from "react";
+import { GlobalStateContext } from "../../Global/GlobalStateContext";
+import { Loader} from '../../components/Loader/Loader'
  
 
 export const SignUpPage = () => {
 
     const navigate = useNavigate()
+    const {loader} = useContext(GlobalStateContext)
     const [checked,setChecked] = useState()
     console.log(checked)
     const { form ,onChange,clear} = useForm({
@@ -73,6 +77,7 @@ export const SignUpPage = () => {
                 <Button type={"submit"}variant="contained" color="primary" style={{ background: 'linear-gradient(to right, #FE5D5D, #FE6D6B,#FCAAA3),#FAC1B8'}}>SignUp</Button>
            
             </Form>
+            {!loader && <Loader/>}
         </Container>
     )
 }

@@ -7,10 +7,10 @@ import { Header } from "../components/Header/Header";
 
 
 export const Router = () => {
-  
+
     return(
         <BrowserRouter>
-        <Header/>
+       {window.location.pathname != "/" ? <Header/> : "" }
         <Routes>
             <Route index element={<LoginPage/>}/>
             <Route path="signUpPage"  element={<SignUpPage/>}/> 
