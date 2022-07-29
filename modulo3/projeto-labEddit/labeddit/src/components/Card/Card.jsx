@@ -17,12 +17,12 @@ export const Card = (props) => {
         
      }
     //  navigator.share({})
-     
+     console.log(window.location.href)
      
     return(
         <Container >
             
-               <a href="https://www.facebook.com/sharer/sharer.php?window.location.href=">
+               <a href={`https://www.facebook.com/sharer/sharer.php?${window.location.href}`}>
                    <ThumbUpIcon />
                </a>
                 <Send>Enviado por: <u>{props.username}</u></Send>
