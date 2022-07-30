@@ -12,7 +12,7 @@ console.log(window.localStorage)
         clear()
         goToFeed(navigate);
     }).catch((err)=>{
-        alert(err)
+        alert(err.response.data.message)
     })
 
 }

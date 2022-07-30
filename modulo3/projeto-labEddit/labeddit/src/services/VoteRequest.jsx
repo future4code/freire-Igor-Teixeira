@@ -8,13 +8,13 @@ const body = {
 export const CreatePostVote = (id) => {
   axios
     .post(`${baseUrl}/posts/${id}/votes`, body, token)
-    .then()
+    .then(()=> GetPost())
     .catch((err) => alert(err.response.data.message));
 };
 
 export const CreateCommentVote = (id) => {
     axios.post(`${baseUrl}/comments/${id}/votes`,body , token)
-    .then()
+    .then(()=> GetPostComments())
     .catch((err) => alert(err.response.data.message))
 };
 

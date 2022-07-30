@@ -11,8 +11,8 @@ export const PaginationControlled = () => {
   const handleChange = (event, value) => {
     setPage(value);
   };
-  const cont = page
-  console.log(page)
+
+ 
   return (
    <Container>
         <Pagination color="primary" count={10} page={page} onChange={handleChange} />  

@@ -21,7 +21,7 @@ export const Comment = (props) =>{
         body:"",
            
     })
-    console.log(comment)
+   
     GetPostComments(props.id)
 
     const submit = (event) =>{
@@ -31,7 +31,7 @@ export const Comment = (props) =>{
         
     }
     
-    console.log(comment)
+ 
     const listComment = comment && comment.map((com)=>{
         return(
             <CardComment key={com.id}>

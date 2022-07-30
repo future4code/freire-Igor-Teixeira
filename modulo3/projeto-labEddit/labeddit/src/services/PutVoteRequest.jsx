@@ -17,7 +17,7 @@ export const ChangeCommentVote = (id) => {
     axios
     .put(`${baseUrl}/comments/${id}/votes`,body,token)
     .then()
-    .catch((err) => alert(err.response))
+    .catch((err) => alert(err.response.data.message))
 
 }
 

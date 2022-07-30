@@ -7,6 +7,7 @@ import {FeedPage} from '../../pages/FeedPage/Feed'
 import {useProtectedPage} from '../../hoocks/UseProtectPage'
 
 
+
 export const PostPage = () => {
     useProtectedPage()
    
@@ -47,6 +48,7 @@ export const PostPage = () => {
                 <Button type={"submit"} variant="contained" color="primary" style={{ background: 'linear-gradient(to right, #FE5D5D, #FE6D6B,#FCAAA3),#FAC1B8'}}>Postar</Button>
             </Form>
             <FeedPage/>
+         
 
             
   

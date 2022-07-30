@@ -36,11 +36,7 @@ export const FeedPage = () => {
            
     })
 
-    // const [query, setQuery] = useState("")
-    // const UpDateQuery = (e) => {
-    //     setQuery(e.target.value)
-    // }
-    
+ 
 
     return (
 
