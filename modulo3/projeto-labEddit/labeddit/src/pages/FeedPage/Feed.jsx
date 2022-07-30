@@ -1,6 +1,6 @@
 import { GetPost } from "../../services/PostRequest";
 import {Card} from '../../components/Card/Card'
-import {Container} from './Styled'
+import {Container,StyledButton,ButtonNavigate} from './Styled'
 import {Button} from '@mui/material'
 import {CreatePostVote} from '../../services/VoteRequest'
 import {goToPost,goToFeed} from '../../routes/Coordinator'
@@ -10,6 +10,10 @@ import { useContext } from "react";
 import { GlobalStateContext } from "../../Global/GlobalStateContext";
 import { Loader} from '../../components/Loader/Loader'
 import {ChangePostVote} from '../../services/PutVoteRequest'
+import { DeletePostVote } from "../../services/DeleteVoterequest";
+import {PaginationControlled} from '../../components/Pagination/Pagination'
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+
 
 export const FeedPage = () => {
     useProtectedPage()
@@ -19,7 +23,7 @@ export const FeedPage = () => {
     const allPosts = GetPost()
     const listPost = allPosts && allPosts.map((item,index)=>{
         return <Card key={index}
-        
+            userVote={item.userVote}
             id={item.id}
             title={item.title}
             username={item.username}
@@ -27,18 +31,58 @@ export const FeedPage = () => {
             voteSum={item.voteSum}
             commentCount={item.commentCount}
             button={()=>CreatePostVote(item.id)}
-            buttonPut={()=>ChangePostVote(item.id)}/>
+            buttonPut={()=>ChangePostVote(item.id)}
+            buttonDel={()=>DeletePostVote(item.id)}/>
            
     })
+
+    // const [query, setQuery] = useState("")
+    // const UpDateQuery = (e) => {
+    //     setQuery(e.target.value)
+    // }
     
 
-    return(
-        <Container>
-           {location.pathname === "/feedPage" ? <Button onClick={()=>goToPost(navigate)} type={"submit"}variant="contained" color="primary" style={{ background: 'linear-gradient(to right, #FE5D5D, #FE6D6B,#FCAAA3),#FAC1B8'}}>Criar post</Button> :
-           <Button onClick={()=>goToFeed(navigate)} type={"submit"}variant="contained" color="primary" style={{ background: 'linear-gradient(to right, #FE5D5D, #FE6D6B,#FCAAA3),#FAC1B8'}}>Feed</Button> }
-            
-            {listPost} 
-            {!loader && <Loader/>}
-        </Container>
-    )
+    return (
+
+      <Container>
+        <ButtonNavigate onClick={() => {window.scrollTo(0, 0) }}>
+            <KeyboardArrowUpIcon color={"secondary"}/>
+        </ButtonNavigate>
+
+        {location.pathname === "/feedPage" ? (
+          <Button
+            onClick={() => goToPost(navigate)}
+            type={"submit"}
+            variant="contained"
+            color="primary"
+            style={{
+              background:
+                "linear-gradient(to right, #FE5D5D, #FE6D6B,#FCAAA3),#FAC1B8",
+            }}
+          >
+            Criar post
+          </Button>
+        ) : (
+          <StyledButton
+            onClick={() => goToFeed(navigate)}
+            type={"submit"}
+            variant="contained"
+            color="primary"
+            style={{
+              background:
+                "linear-gradient(to right, #FE5D5D, #FE6D6B,#FCAAA3),#FAC1B8",
+            }}
+          >
+            Feed
+          </StyledButton>
+        )}
+   
+        {listPost}
+        {!loader && <Loader />}
+
+        <PaginationControlled />
+        
+        
+      </Container>
+    );
 }

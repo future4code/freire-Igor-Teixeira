@@ -8,22 +8,13 @@ const body = {
 export const CreatePostVote = (id) => {
   axios
     .post(`${baseUrl}/posts/${id}/votes`, body, token)
-    .then((res) =>{
-      console.log(res.data)
-      GetPost()
-     
-    })
-
+    .then()
     .catch((err) => alert(err.response.data.message));
 };
 
 export const CreateCommentVote = (id) => {
     axios.post(`${baseUrl}/comments/${id}/votes`,body , token)
-    .then((res) =>{ 
-      
-      console.log(res.data)
-      GetPostComments()
-    })
+    .then()
     .catch((err) => alert(err.response.data.message))
 };
 

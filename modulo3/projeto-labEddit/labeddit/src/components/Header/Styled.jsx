@@ -8,7 +8,7 @@ export const Container = styled.div`
    
     height: 7vh;
     button{
-        position:fixed;
+        position:absolute;
         right: 5px;
 
     }

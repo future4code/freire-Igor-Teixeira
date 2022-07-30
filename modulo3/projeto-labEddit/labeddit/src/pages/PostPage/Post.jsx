@@ -5,13 +5,11 @@ import {useForm} from '../../hoocks/UseForm'
 import { CreatePost } from "../../services/CreatPost";
 import {FeedPage} from '../../pages/FeedPage/Feed'
 import {useProtectedPage} from '../../hoocks/UseProtectPage'
-import { useContext } from "react";
-import { GlobalStateContext } from "../../Global/GlobalStateContext";
-import { Loader} from '../../components/Loader/Loader'
+
 
 export const PostPage = () => {
     useProtectedPage()
-    const {loader} = useContext(GlobalStateContext)
+   
     const {form,onChange,clear} = useForm({
         title: "",
         body: "",
@@ -49,7 +47,7 @@ export const PostPage = () => {
                 <Button type={"submit"} variant="contained" color="primary" style={{ background: 'linear-gradient(to right, #FE5D5D, #FE6D6B,#FCAAA3),#FAC1B8'}}>Postar</Button>
             </Form>
             <FeedPage/>
-            {!loader && <Loader/>}
+
             
   
         </Container>

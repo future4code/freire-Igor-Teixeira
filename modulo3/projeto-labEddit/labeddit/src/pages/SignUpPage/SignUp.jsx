@@ -13,7 +13,6 @@ import { Loader} from '../../components/Loader/Loader'
 export const SignUpPage = () => {
 
     const navigate = useNavigate()
-    const {loader} = useContext(GlobalStateContext)
     const [checked,setChecked] = useState()
     console.log(checked)
     const { form ,onChange,clear} = useForm({
@@ -67,7 +66,7 @@ export const SignUpPage = () => {
                 value={form.password}
                 required/>
                 <Text>
-                    <p>Ao continuar, você concorda com o nosso Contrato de usuário e nossa Política de Privacidade</p>
+                    <p>Ao continuar, você concorda com o nosso <a href="">Contrato de usuário</a> e nossa <a href="">Política de Privacidade</a></p>
                 </Text>
                 <Check>
                 <FormGroup>
@@ -77,7 +76,7 @@ export const SignUpPage = () => {
                 <Button type={"submit"}variant="contained" color="primary" style={{ background: 'linear-gradient(to right, #FE5D5D, #FE6D6B,#FCAAA3),#FAC1B8'}}>SignUp</Button>
            
             </Form>
-            {!loader && <Loader/>}
+            
         </Container>
     )
 }

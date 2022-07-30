@@ -1,7 +1,7 @@
 
 import React from "react"
 import {Container,Img } from "./Styled"
-import logo from '../../assets/logoH.png'
+import logo from '../../assets/logo1.png'
 import { goToLogin } from "../../routes/Coordinator"
 import {useNavigate} from 'react-router-dom'
 import { Button } from "@mui/material"
@@ -18,7 +18,7 @@ export const Header = () => {
     return(
         <Container>
             <Img src={logo} alt="" />
-        {token ? <Button color={"secondary"}  onClick={()=>{logout()}}>logout</Button> : <Button  onClick={()=>{goToLogin(navigate)}} >Login</Button>}
+        {token ? <Button color={"secondary"}  onClick={()=>{logout()}}>logout</Button> : <Button color={"secondary"} onClick={()=>{goToLogin(navigate)}} >Login</Button>}
         </Container>
 
     )

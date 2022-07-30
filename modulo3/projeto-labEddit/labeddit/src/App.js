@@ -13,6 +13,11 @@ const GlobalStyle = createGlobalStyle`
    
   
     }
+    p{
+      font-family: 'Roboto', sans-serif;
+     
+    }
+    
 
     button{
       cursor: pointer;

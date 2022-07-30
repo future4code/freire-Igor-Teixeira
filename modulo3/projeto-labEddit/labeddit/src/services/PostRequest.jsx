@@ -4,30 +4,26 @@ import { baseUrl,token } from "../constants/BaseUrl";
 import {GlobalStateContext} from '../Global/GlobalStateContext'
 
 
-
-
 export const GetPost = () => {
     const[posts,setPosts] = useState([])
-    const {setLoader} = useContext(GlobalStateContext)
+    const {setLoader,page} = useContext(GlobalStateContext)
     useEffect(()=>{
-    axios.get(`${baseUrl}/posts`,token).then((res)=>{
+    axios.get(`${baseUrl}/posts?page=${page}`,token).then((res)=>{
         setPosts(res.data)
-        console.log("deu boa ",res.data);
         setLoader(true)
     }).catch((err)=> alert(err.reponse.data.message))
-},[])
+},[page])
    return posts 
 }
 
 export const GetPostComments = (id) => {
-    const{setComment,setLoader} = useContext(GlobalStateContext)
+    const{comment,setComment,setLoader} = useContext(GlobalStateContext)
     useEffect(()=>{
     axios.get(`${baseUrl}/posts/${id}/comments`,token)
     .then((res)=>{
-        console.log(res.data)
         setComment(res.data)
         setLoader(true)
     }).catch((err)=> alert(err.reponse.data.message))
-},[])
+},[comment])
 
 }

@@ -1,4 +1,4 @@
-import { BrowserRouter,Routes,Route } from "react-router-dom";
+import { BrowserRouter,Routes,Route} from "react-router-dom";
 import {LoginPage} from "../pages/LoginPage/Login"
 import {SignUpPage} from "../pages/SignUpPage/SignUp"
 import {PostPage} from '../pages/PostPage/Post'
@@ -7,10 +7,13 @@ import { Header } from "../components/Header/Header";
 
 
 export const Router = () => {
-
+    
     return(
         <BrowserRouter>
+        
        {window.location.pathname != "/" ? <Header/> : "" }
+
+       {/* <Header/> */}
         <Routes>
             <Route index element={<LoginPage/>}/>
             <Route path="signUpPage"  element={<SignUpPage/>}/> 

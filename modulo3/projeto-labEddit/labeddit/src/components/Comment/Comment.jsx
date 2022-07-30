@@ -11,6 +11,7 @@ import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ThumbDownIcon from '@mui/icons-material/ThumbDown';
 import { CreateCommentVote} from '../../services/VoteRequest'
 import {ChangeCommentVote} from '../../services/PutVoteRequest'
+import {DeleteCommentVote} from '../../services/DeleteVoterequest'
 
 
 
@@ -36,12 +37,14 @@ export const Comment = (props) =>{
             <CardComment key={com.id}>
                 <User><AccountCircleIcon/>{com.username}</User>
                 <Text>{com.body}</Text>
-
                 <Reactions>
-                    <p><ThumbUpIcon onClick={()=>CreateCommentVote(com.id)}/></p> 
+                    <p><ThumbUpIcon color={com.userVote > 0 ? "success" : "Secundary"} onClick={()=>{com.userVote > 0 ? DeleteCommentVote(com.id) : CreateCommentVote(com.id)}}/></p> 
+
                     {com.voteSum  ? <Vote>{com.voteSum}</Vote> : null }
-                    <p><ThumbDownIcon onClick={()=>ChangeCommentVote(com.id)}/></p>
-                  
+
+                    <p>
+                        <ThumbDownIcon color={com.userVote < 0 ? "error" : "Secundary"} onClick={()=>{com.userVote < 0 ? DeleteCommentVote(com.id) : ChangeCommentVote(com.id)}}/>
+                        </p>
                 </Reactions>
                    
             </CardComment>

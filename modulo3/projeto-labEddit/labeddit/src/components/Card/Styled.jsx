@@ -10,6 +10,11 @@ export const Container = styled.div`
     border-left: 20px solid #d6cfcf;
     border-bottom: 20px solid transparent;
     background-clip: padding-box;
+    @media (min-device-width : 700px)  {
+        width: 450px;
+
+}
+
          
 `
 export const Title = styled.div`

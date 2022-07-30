@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../assets/logo.png"
+import logo from "../../assets/logoj.png"
 import { TextField,Button } from "@mui/material";
 import {Container,Form,Img ,Title,Border } from "./Styled"
 import {Login} from '../../services/UserRequest'
@@ -54,9 +54,9 @@ export const LoginPage = () => {
              />
 
             <Button type={"submit"} variant="contained" color="primary" style={{ background: 'linear-gradient(to right, #FE5D5D, #FE6D6B,#FCAAA3),#FAC1B8'}}>Login</Button>
-            <Border />
+             <Border />
             
-            <Button onClick={()=>{goToSignUp(navigate)}}variant="outlined" color="secondary" >Crie uma conta!</Button>
+            <Button onClick={()=>{goToSignUp(navigate)}}variant="outlined" color="primary" >Crie uma conta!</Button>
             </Form>
           
         </Container>

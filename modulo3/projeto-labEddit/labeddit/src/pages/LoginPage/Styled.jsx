@@ -19,6 +19,7 @@ export const Form = styled.form`
 
   button {
     width: 250px;
+
   }
 `;
 
@@ -29,14 +30,15 @@ export const Title = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin:15px;
 
   h1 {
-    margin: 0;
+    margin: 10px;
   }
 `;
 export const Border = styled.hr`
   margin: 0;
-  height: 1px;
+  height: 3px;
   width: 250px;
   background: linear-gradient(#f25757, #f26b6b, #f2bbb6, #f26b6b, #f25757);
 `;

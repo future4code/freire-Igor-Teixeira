@@ -1,11 +1,22 @@
-import * as React from 'react';
+import  React, {useContext} from 'react';
+import Typography from '@mui/material/Typography';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
+import {GlobalStateContext} from '../../Global/GlobalStateContext'
+import {Container} from './Styled'
 
-export default function BasicPagination() {
+export const PaginationControlled = () => {
+ 
+  const {page,setPage} = useContext(GlobalStateContext)
+  const handleChange = (event, value) => {
+    setPage(value);
+  };
+  const cont = page
+  console.log(page)
   return (
-    <Stack spacing={1}>
-      <Pagination count={10} color="primary" />
-    </Stack>
+   <Container>
+        <Pagination color="primary" count={10} page={page} onChange={handleChange} />  
+   </Container>
+
   );
 }
