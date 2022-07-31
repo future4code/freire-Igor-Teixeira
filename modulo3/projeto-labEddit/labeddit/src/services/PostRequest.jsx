@@ -12,7 +12,7 @@ export const GetPost = () => {
         setPosts(res.data)
         setLoader(true)
     }).catch((err)=> alert(err.reponse.data.message))
-},[page])
+},[`${baseUrl}/posts?page=${page}`])
    return posts 
 }
 

@@ -25,6 +25,7 @@ export const Form = styled.form`
 
 export const Img = styled.img`
   width: 150px;
+  margin-top: 50px;
 `;
 export const Title = styled.div`
   display: flex;

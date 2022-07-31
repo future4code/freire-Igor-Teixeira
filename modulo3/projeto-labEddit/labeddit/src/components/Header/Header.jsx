@@ -1,7 +1,6 @@
-
 import React from "react"
 import {Container,Img } from "./Styled"
-import logo from '../../assets/logo1.png'
+import logo from '../../assets/log0.png'
 import { goToLogin } from "../../routes/Coordinator"
 import {useNavigate} from 'react-router-dom'
 import { Button } from "@mui/material"

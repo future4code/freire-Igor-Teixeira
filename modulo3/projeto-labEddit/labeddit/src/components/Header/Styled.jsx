@@ -4,8 +4,7 @@ export const Container = styled.div`
     display:flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #FD847F;
-   
+    background-color:#F2956C;
     height: 7vh;
     button{
         position:absolute;
@@ -15,4 +14,5 @@ export const Container = styled.div`
 `
 export const Img = styled.img`
     height: 95%;
+  
     `

@@ -10,10 +10,7 @@ export const Router = () => {
     
     return(
         <BrowserRouter>
-        
-       {window.location.pathname != "/" ? <Header/> : "" }
 
-       {/* <Header/> */}
         <Routes>
             <Route index element={<LoginPage/>}/>
             <Route path="signUpPage"  element={<SignUpPage/>}/> 
