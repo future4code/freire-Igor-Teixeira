@@ -11,14 +11,11 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
    
-  
     }
     p{
       font-family: 'Roboto', sans-serif;
-     
     }
     
-
     button{
       cursor: pointer;
     }

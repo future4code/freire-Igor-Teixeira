@@ -7,18 +7,18 @@ export const Container = styled.div`
     flex-direction: column;
     gap :10px ; 
     align-items: center;
-
   
 `
 
 
 export const StyledButton = styled(Button)`
      width:250px;
+   
+     
 `
 
 export const ButtonNavigate = styled.button`
-    position: fixed;
-    
+    position: fixed;    
     right: 5px;
     bottom: 40px;
     background: #f25757;

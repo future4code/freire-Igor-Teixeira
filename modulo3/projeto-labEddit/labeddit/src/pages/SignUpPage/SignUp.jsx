@@ -14,7 +14,6 @@ export const SignUpPage = () => {
 
     const navigate = useNavigate()
     const [checked,setChecked] = useState()
-    console.log(checked)
     const { form ,onChange,clear} = useForm({
         username:"",
         email:"",

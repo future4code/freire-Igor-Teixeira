@@ -4,7 +4,7 @@ export const Container = styled.div`
     display:flex;
     justify-content: space-around;
     align-items: center;
-    background-color:#F2956C;
+    background-color:#f25757;
     height: 7vh;
     button{
         position:absolute;

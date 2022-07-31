@@ -15,6 +15,7 @@ import {PaginationControlled} from '../../components/Pagination/Pagination'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 
+
 export const FeedPage = () => {
     useProtectedPage()
     const {loader} = useContext(GlobalStateContext)
@@ -40,45 +41,45 @@ export const FeedPage = () => {
 
     return (
 
-      <Container>
-        <ButtonNavigate onClick={() => {window.scrollTo(0, 0) }}>
-            <KeyboardArrowUpIcon color={"secondary"}/>
-        </ButtonNavigate>
-
-        {location.pathname === "/feedPage" ? (
-          <Button
-            onClick={() => goToPost(navigate)}
-            type={"submit"}
-            variant="contained"
-            color="primary"
-            style={{
-              background:
-                "linear-gradient(to right, #FE5D5D, #FE6D6B,#FCAAA3),#FAC1B8",
-            }}
-          >
-            Criar post
-          </Button>
-        ) : (
-          <StyledButton
-            onClick={() => goToFeed(navigate)}
-            type={"submit"}
-            variant="contained"
-            color="primary"
-            style={{
-              background:
-                "linear-gradient(to right, #FE5D5D, #FE6D6B,#FCAAA3),#FAC1B8",
-            }}
-          >
-            Feed
-          </StyledButton>
-        )}
-   
-        {listPost}
-        {!loader && <Loader />}
-
-        <PaginationControlled />
+        <Container>
+        
+          <ButtonNavigate onClick={() => {window.scrollTo(0, 0) }}>
+              <KeyboardArrowUpIcon color={"secondary"}/>
+          </ButtonNavigate>
+          
+          {location.pathname === "/feedPage" ? (
+            <StyledButton
+              onClick={() => goToPost(navigate)}
+              type={"submit"}
+              variant="contained"
+              color="primary"
+              style={{
+                background:
+                  "linear-gradient(to right, #EC5F6F, #EF796D,#F2956C,#F5B166",
+              }}
+            >
+              Criar post
+            </StyledButton>
+          ) : (
+            <StyledButton
+              onClick={() => goToFeed(navigate)}
+              type={"submit"}
+              variant="contained"
+              color="primary"
+              style={{
+                background:
+                  "linear-gradient(to right, #EC5F6F, #EF796D,#F2956C,#F5B166",
+              }}
+            >
+              Feed
+            </StyledButton>
+          )}
+          {listPost}
+          {!loader && <Loader />}
+          <PaginationControlled />
         
         
-      </Container>
+        </Container>
+
     );
 }
