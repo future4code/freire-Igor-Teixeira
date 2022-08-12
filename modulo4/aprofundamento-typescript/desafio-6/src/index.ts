@@ -7,21 +7,23 @@ enum Epocas {
 }
 
 
-const idadeHistorica = (ano:number ,siglaEpoca?:string ) => {
-    const sigla:string = siglaEpoca.toUpperCase()
-    if(ano === 100.000 && sigla === "AC"){
+
+
+const idadeHistorica = (ano:number ,siglaEpoca?:string) => {
+    const sigla:string = siglaEpoca?.toUpperCase()
+    if(ano < 4000  && sigla === "AC"){
         return Epocas.PREHISTORIA
-    }else if(ano === 4000 && sigla === "AC"){
+    }else if(ano > 4000 && sigla === "AC"){
         return Epocas.IDADEANTIGA
-    }else if (ano === 476 && sigla === "DC" ){
+    }else if (ano >= 476 && ano < 1453  && sigla === "DC" || ano >= 476 && ano < 1453  && sigla === undefined){
         return Epocas.IDADEMEDIA
-    }else if(ano === 1453 && sigla === "DC" ) {
+    }else if(ano >= 1453 && ano < 1789 && sigla === "DC" || ano >= 1453 && ano < 1789 && sigla === undefined) {
         return Epocas.IDADEMODERNA
-    }else if(ano === 1789 && sigla === "DC" ){
+    }else if( ano >= 1789 && sigla === "DC" || ano >= 1789 && sigla === undefined ){
         return Epocas.IDADECONTEMPORANEA
     }else{
         console.log("Digite uma data valida")
     }
     
 }
-console.log(idadeHistorica(1453))
+console.log(idadeHistorica(2000,"Ac"))
