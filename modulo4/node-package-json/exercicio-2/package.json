@@ -1,0 +1,11 @@
+{
+  "name": "exercicio-2",
+  "version": "1.0.0",
+  "description": "\"recebe e imprime nome e idade\"",
+  "main": "exercicio2.js",
+  "scripts": {
+    "start": "node ./exercicio2.js"
+  },
+  "author": "igor",
+  "license": "ISC"
+}
