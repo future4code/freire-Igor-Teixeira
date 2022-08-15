@@ -1,3 +1,12 @@
+type Post = {
+  postId: number;
+  title: string;
+  body: string;
+  userId: number;
+};
+
+
+
 type Data = {
   id: number;
   name: string;
@@ -6,12 +15,8 @@ type Data = {
   website: string;
   post: Post[];
 };
-type Post = {
-  postId: number;
-  title: string;
-  body: string;
-  userId: number;
-};
+
+
 
 export const PersonalData: Data[] = [
   {

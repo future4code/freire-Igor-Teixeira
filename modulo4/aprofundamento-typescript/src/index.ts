@@ -2,11 +2,11 @@ import express from "express";
 import { PersonalData } from "./dados";
 
 import { AddressInfo } from "net";
+import { send } from "process";
 
 const app = express();
 
 app.use(express.json());
-
 
 //teste
 app.get("/", (req, res) => {  
@@ -54,9 +54,36 @@ app.get("/users/:postId",(req,res)=>{
   } 
 })
 
+app.delete("/users/deletepost", (req, res) => {
+  const post = PersonalData.map((item)=>item?.post).flat(1)
+  const id = Number(req.query.id)
+  if (!id) res.status(400).send("ID inválido")
+  const deletePost = post.filter((item) => {
+      if (item.postId !== id) {
+        console.log(post)
+          return post
+      }else {
+        return undefined
+      }
+  })
 
+  deletePost != undefined ? res.status(200).send(deletePost) : res.send("id invalido")
+})
 
+// exercicio 10
 
+app.delete("/users/deleteUser", (req, res) => {
+  const id = Number(req.query.id)
+  if (!id) res.status(400).send("ID inválido")
+  const deleteUser = PersonalData.filter((user) => {
+      if (user.id !== id) {
+          return user
+      }else{
+        return undefined
+      }
+  })
+  deleteUser != undefined ? res.status(200).send(deleteUser): res.send("Id invalido")
+})
 
 
 const server = app.listen(process.env.PORT || 3003, () => {
