@@ -6,7 +6,7 @@
   "scripts": {
     "start": "tsc && node ./build/index.js",
     "ts-start": "ts-node .src/index.ts",
-    "start-dev": "npx ts-node-dev .src/index.ts"
+    "start-dev": "npx ts-node-dev ./src/index.ts"
   },
   "author": "igor",
   "license": "ISC",
