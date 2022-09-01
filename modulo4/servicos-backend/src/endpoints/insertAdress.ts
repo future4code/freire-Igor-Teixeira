@@ -25,7 +25,7 @@ export const insertAddres = async (req: Request, res: Response): Promise<void> =
                 cidade: result.cidade,
                 estado: result.estado,
                 
-                
+                 "teste"
             })
 
         res.status(200).send("Usuário cadastrado com sucesso!")
