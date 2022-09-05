@@ -1,6 +1,6 @@
 import app from "./app"
 import { AddressInfo } from "net"
-import { CreateUser } from "./endpoints/CreateUser";
+import { CreateUser } from "./endpoints/createUser";
 import { getAllUsers } from "./endpoints/getAllUsers";
 import { createProducts } from "./endpoints/createProduct";
 import { getAllProducts } from "./endpoints/getAllProducts";
