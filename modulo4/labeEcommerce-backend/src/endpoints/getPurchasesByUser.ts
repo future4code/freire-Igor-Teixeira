@@ -17,7 +17,7 @@ export const getPurchasesByUser = async (
     const purchases = result.map(item => item)
 
     res.status(200).send(purchases);
-  } catch (error: any) {
+  } catch (error) {
     res.status(errstatus).send(error.sqlMessage || error.message);
   }
 };

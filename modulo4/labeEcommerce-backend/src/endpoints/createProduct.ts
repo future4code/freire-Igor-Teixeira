@@ -19,7 +19,7 @@ export const createProducts = async (
       image_url: url,
     });
     res.status(200).send("Produto cadastrado com sucesso!");
-  } catch (error: any) {
+  } catch (error) {
     res.status(errstatus).send(error.message);
   }
 };

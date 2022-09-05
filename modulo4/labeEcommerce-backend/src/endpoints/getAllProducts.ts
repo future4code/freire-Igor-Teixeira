@@ -15,7 +15,7 @@ export const getAllProducts = async (
       .select("*")
       .orderBy("name", order);
     res.status(200).send(result);
-  } catch (error: any) {
+  } catch (error) {
     res.status(errstatus).send(error.message);
   }
 };

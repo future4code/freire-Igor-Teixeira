@@ -25,7 +25,7 @@ export const purchaseRegister = async (
       total_price: total,
     });
     res.status(200).send("Compra registrada com sucesso!");
-  } catch (error: any) {
+  } catch (error) {
     res.status(errstatus).send(error.message);
   }
 };

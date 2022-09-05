@@ -19,7 +19,7 @@ export const CreateUser = async (
       password,
     });
     res.status(200).send("Usuario criado com sucesso !");
-  } catch (error: any) {
+  } catch (error) {
     res.status(errstatus).send(error.message);
   }
 };

@@ -21,7 +21,7 @@ export const getAllUsers = async (
       result[i].purchases = await getPurchases(result[i].id)
   }
     res.status(200).send(result);
-  } catch (error: any) {
+  } catch (error) {
     res.status(errstatus).send(error.message);
   }
 };
