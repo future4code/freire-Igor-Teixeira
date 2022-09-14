@@ -1,0 +1,24 @@
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+   "email":"igor@gmail.com",
+   "password":"123456",
+   "role":"ADIM"
+}
+
+###
+
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+   "email":"lolo@gmail.com",
+   "password":"123456"
+}
+
+###
+
+GET  http://localhost:3003/user/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjliZThlOGZhLTQxM2EtNDBjZS1iMTYzLTA4NzY5NGE3NGU5NiIsInJvbGVzIjoiTk9STUFMIiwiaWF0IjoxNjYzMTAyODk5LCJleHAiOjE2NjMxODkyOTl9.wiHb_vo0hD5CmPymaeQOSJdJjxHLh5SObBXvJjd-vq4
+
