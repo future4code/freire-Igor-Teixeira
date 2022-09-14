@@ -1,0 +1,14 @@
+POST http://localhost:3003/products
+
+{
+    "name":"XboxOne",
+    "price":3999,
+    "url":"https://cdn.pocket-lint.com/r/s/1200x630/assets/images/148296-games-review-xbox-one-s-all-digital-edition-product-shots-image1-xct4hs5njv.jpg"
+}
+
+###
+
+GET  http://localhost:3003/products
+
+###
+
