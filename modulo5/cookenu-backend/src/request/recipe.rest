@@ -1,0 +1,16 @@
+
+POST http://localhost:3003/recipe
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwNjJlYWJiLTEzYWYtNDkxYS1hOTI5LTg4NDJjMDIzNjcyYiIsInJvbGVzIjoiTk9STUFMIiwiaWF0IjoxNjYzMTc5ODQwLCJleHAiOjE2NjMyNjYyNDB9.cRrGItHFqB2_KGSSiwQAms1Pk_hVn_maF84AQHbZs4A
+Content-Type: application/json
+
+{
+   "title":"Doce de leite",
+   "description":"leite e açucar"
+}
+
+###
+
+GET  http://localhost:3003/recipe/da13b0ac-29fc-46e3-bd22-0508ec9f37e8
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwNjJlYWJiLTEzYWYtNDkxYS1hOTI5LTg4NDJjMDIzNjcyYiIsInJvbGVzIjoiTk9STUFMIiwiaWF0IjoxNjYzMTc5ODQwLCJleHAiOjE2NjMyNjYyNDB9.cRrGItHFqB2_KGSSiwQAms1Pk_hVn_maF84AQHbZs4A
+Content-Type: application/json
+

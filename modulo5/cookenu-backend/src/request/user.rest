@@ -1,0 +1,30 @@
+
+POST http://localhost:3003/signup
+Content-Type: application/json
+
+{
+   "name":"igor",
+   "email":"admigor@gmail.com",
+   "password":"123456",
+   "role":"ADMIN"
+  
+}
+
+###
+
+POST http://localhost:3003/login
+Content-Type: application/json
+
+{
+   "email":"maria@gmail.com",
+   "password":"123456"
+}
+
+###
+GET http://localhost:3003/user/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwNjJlYWJiLTEzYWYtNDkxYS1hOTI5LTg4NDJjMDIzNjcyYiIsInJvbGVzIjoiTk9STUFMIiwiaWF0IjoxNjYzMTc5ODQwLCJleHAiOjE2NjMyNjYyNDB9.cRrGItHFqB2_KGSSiwQAms1Pk_hVn_maF84AQHbZs4A
+
+###
+
+GET http://localhost:3003/user/3062eabb-13af-491a-a929-8842c023672b
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVlN2Y4ZGZkLTdiNGYtNGRhYi04Mjc3LTMwNjdhY2E1ZGZhZSIsInJvbGVzIjoiQURNSU4iLCJpYXQiOjE2NjMxODA4MzMsImV4cCI6MTY2MzI2NzIzM30.J8gSDHqiYWTGwM2ZPwz2jAYfELAGakJJDF-W_kOB3kQ
