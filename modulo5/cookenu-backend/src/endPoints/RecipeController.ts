@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { Request, Response, Router } from "express";
 import { RecipeData } from "../dataBase/RecipeData";
 import { Recipe } from "../models/Recipe";
 import { ROLES } from "../models/User";
@@ -7,7 +7,6 @@ import { CorrectDate } from "../services/CorrectData";
 import { GenerateId } from "../services/GenerateId";
 
 export class RecipeController {
-    
   async createRecipe(req: Request, res: Response) {
     let errorstatus = 500;
     try {
@@ -74,10 +73,60 @@ export class RecipeController {
     }
   }
 
+  async getUserRecipeFeed(req: Request, res: Response) {
+    let erroStatus = 500;
+    try {
+      const token = req.headers.authorization;
+      const authenticator = new Autheticator().getTokenData(token);
+      if (
+        !token ||
+        (authenticator.roles !== ROLES.NOMAL &&
+          authenticator.roles !== ROLES.ADMIN)
+      ) {
+        erroStatus = 401;
+        throw new Error("Token invalido");
+      }
+      const [recipes] = await new RecipeData().getUserRecipeFeed(
+        authenticator.id
+      );
+
+      res.status(200).send({ recipe: recipes });
+    } catch (error) {
+      res.status(erroStatus).send(error.sqlMessage || error.message);
+    }
+  }
+
   async updateRecipe(req: Request, res: Response) {
     let errorstatus = 500;
 
     try {
+      const { id, title, description } = req.body;
+      const token = req.headers.authorization;
+      if (!token) {
+        errorstatus = 401;
+        throw new Error("Digite um token");
+      }
+      if (!id) {
+        errorstatus = 422;
+        throw new Error("Parametro id e obrigatori");
+      }
+      const authenticator = new Autheticator().getTokenData(token);
+      if (
+        authenticator.roles !== ROLES.NOMAL &&
+        authenticator.roles !== ROLES.ADMIN
+      ) {
+        errorstatus = 401;
+        throw new Error("Token invalido");
+      }
+
+      const result = await new RecipeData().updateRecipe(
+        authenticator.id,
+        id,
+        title,
+        description
+      );
+
+      res.status(201).send(result);
     } catch (error) {
       res.status(errorstatus).send(error.message || error.sqlMessage);
     }
@@ -87,6 +136,15 @@ export class RecipeController {
     let errorstatus = 500;
 
     try {
+      const token = req.headers.authorization;
+      const id = req.params.id;
+      const authenticator = new Autheticator().getTokenData(token);
+      if (!token || authenticator.roles !== ROLES.NOMAL) {
+        errorstatus = 401;
+        throw new Error("Digite um token valido");
+      }
+      const result = await new RecipeData().deletRecipe(authenticator.id, id);
+      res.status(200).send({ result: result });
     } catch (error) {
       res.status(errorstatus).send(error.message || error.sqlMessage);
     }

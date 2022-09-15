@@ -1,13 +1,11 @@
-import {Request,Response} from "express"
+import { Request, Response } from "express";
 import { ROLES, User } from "../models/User";
 import { GenerateId } from "../services/GenerateId";
-import {UserData} from "../dataBase/UserData"
+import { UserData } from "../dataBase/UserData";
 import { HashManager } from "../services/HashManeger";
 import { Autheticator } from "../services/Authenticator";
 
-
 export class UserController {
-
   async signUpUser(req: Request, res: Response) {
     let erroStatus = 500;
     try {
@@ -78,18 +76,20 @@ export class UserController {
   async getProfile(req: Request, res: Response) {
     let erroStatus = 500;
     try {
-        const token = req.headers.authorization as string
-        if(!token){
-            erroStatus = 401
-            throw new Error("Digite token no headers");  
-        }
-        const newtoken = new Autheticator().getTokenData(token)
-        if(newtoken.roles !== ROLES.NOMAL){
-            erroStatus = 401
-            throw new Error("Usuário sem permissão, somente usuário com role = NORMAL, podem ter acesso a esse edpoint");    
-        }
-        const [result] = await new UserData().getProfile(newtoken.id)
-        res.status(200).send({result:result})
+      const token = req.headers.authorization as string;
+      if (!token) {
+        erroStatus = 401;
+        throw new Error("Digite token no headers");
+      }
+      const newtoken = new Autheticator().getTokenData(token);
+      if (newtoken.roles !== ROLES.NOMAL) {
+        erroStatus = 401;
+        throw new Error(
+          "Usuário sem permissão, somente usuário com role = NORMAL, podem ter acesso a esse edpoint"
+        );
+      }
+      const [result] = await new UserData().getProfile(newtoken.id);
+      res.status(200).send({ result: result });
     } catch (error) {
       res.status(erroStatus).send(error.sqlMessage || error.message);
     }
@@ -98,35 +98,41 @@ export class UserController {
   async getProfileById(req: Request, res: Response) {
     let erroStatus = 500;
     try {
-        const token = req.headers.authorization as string
-        const id = req.params.id as string
-        if(!token || !id){
-            erroStatus = 401
-            throw new Error("Digite parametros necessarios");  
-        }
-        const newtoken = new Autheticator().getTokenData(token)
-        if(newtoken.roles !== ROLES.ADMIN){
-            erroStatus = 403
-            throw new Error("Usuário sem permissão, somente usuário com role = ADMIN, podem ter acesso a esse edpoint");    
-        }
-        const [result] = await new UserData().getProfile(id)
-        res.status(200).send({result:result})
+      const token = req.headers.authorization as string;
+      const id = req.params.id as string;
+      if (!token || !id) {
+        erroStatus = 401;
+        throw new Error("Digite parametros necessarios");
+      }
+      const newtoken = new Autheticator().getTokenData(token);
+      if (newtoken.roles !== ROLES.ADMIN) {
+        erroStatus = 403;
+        throw new Error(
+          "Usuário sem permissão, somente usuário com role = ADMIN, podem ter acesso a esse edpoint"
+        );
+      }
+      const [result] = await new UserData().getProfile(id);
+      res.status(200).send({ result: result });
     } catch (error) {
       res.status(erroStatus).send(error.sqlMessage || error.message);
     }
   }
 
-  async getUserRecipeFeed(req: Request, res: Response) {
+  async deletAccount(req: Request, res: Response) {
     let erroStatus = 500;
     try {
-    } catch (error) {
-      res.status(erroStatus).send(error.sqlMessage || error.message);
-    }
-  }
-
-  async deletUser(req: Request, res: Response) {
-    let erroStatus = 500;
-    try {
+      const token = req.headers.authorization;
+      const newtoken = new Autheticator().getTokenData(token);
+      if (!token) {
+        erroStatus = 422;
+        throw new Error("Digite um token");
+      }
+      if (newtoken.roles !== ROLES.ADMIN) {
+        erroStatus = 401;
+        throw new Error("Usuario não autorizado");
+      }
+      const result = await new UserData().deletUser(newtoken.id);
+      res.status(200).send({ Result: result });
     } catch (error) {
       res.status(erroStatus).send(error.sqlMessage || error.message);
     }

@@ -1,6 +1,5 @@
 import { genSalt, hash, compare } from "bcryptjs";
 
-
 export class HashManager {
   public hash = async (plaintext: string) => {
     const rounds = Number(process.env.BCRYPT_COST);
@@ -9,11 +8,8 @@ export class HashManager {
     return result;
   };
 
-  public compareHash = async (
-    plaintext: string,
-    hash: string
-  ) => {
-    const result = await compare(plaintext,hash)
+  public compareHash = async (plaintext: string, hash: string) => {
+    const result = await compare(plaintext, hash);
     return result;
   };
 }

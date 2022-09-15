@@ -9,7 +9,7 @@ export class CorrectDate {
     const newFormattedDate: string =
       newDate.getDate() +
       "/" +
-      (newDate.getMonth() + 1 ) +  
+      (newDate.getMonth() + 1) +
       "/" +
       newDate.getFullYear();
     return newFormattedDate;

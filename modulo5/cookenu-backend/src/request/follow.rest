@@ -1,0 +1,17 @@
+POST http://localhost:3003/user/follow
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE3NzE1MDdiLWJlNTctNGIxNi04NWU0LThkZTIwNTg4MGEzYSIsInJvbGVzIjoiQURNSU4iLCJpYXQiOjE2NjMyNDg1ODEsImV4cCI6MTY2MzMzNDk4MX0.yy0mpdug1QYbbLFcpK24jg0qrFz6WdO_ntvel3HZmo0
+Content-Type: application/json
+
+{
+   "userToFollowId":"3062eabb-13af-491a-a929-8842c023672b"
+}
+
+###
+
+POST http://localhost:3003/user/unfollow
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE3NzE1MDdiLWJlNTctNGIxNi04NWU0LThkZTIwNTg4MGEzYSIsInJvbGVzIjoiQURNSU4iLCJpYXQiOjE2NjMyNDg1ODEsImV4cCI6MTY2MzMzNDk4MX0.yy0mpdug1QYbbLFcpK24jg0qrFz6WdO_ntvel3HZmo0
+Content-Type: application/json
+
+{
+   "userToFollowId":"3062eabb-13af-491a-a929-8842c023672b"
+}

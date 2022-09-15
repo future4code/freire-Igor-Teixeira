@@ -1,5 +1,4 @@
-export type AuthenticationData ={
-    id: string
-    roles:string
- }
-
+export type AuthenticationData = {
+  id: string;
+  roles: string;
+};
