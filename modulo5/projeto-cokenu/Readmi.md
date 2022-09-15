@@ -22,6 +22,9 @@ Cadastrar novo usuário: usar o endpoint createUser. Passanod via body as seguin
 
 Consultar a documentação no Postman, pois nela, tem exemplos de como usar cada enpoint.
 
+link postman = https://documenter.getpostman.com/view/21555253/2s7YfLibZM
+
+link heroku = https://cokenu-backend.herokuapp.com/
 
 ## Tecnologias utulizadas:
 - Typescript POO
