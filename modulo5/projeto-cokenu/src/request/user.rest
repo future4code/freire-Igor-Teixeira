@@ -1,0 +1,38 @@
+// signup
+POST http://localhost:3003/signup
+Content-Type: application/json
+
+{
+   "name":"nivall",
+   "email":"nival@gmail.com",
+   "password":"123456",
+   "role":"NORMAL"
+  
+}
+
+###
+// login
+POST http://localhost:3003/login
+Content-Type: application/json
+
+{
+   "email":"nival@gmail.com",
+   "password":"123456"
+}
+
+###
+// buscar perfil
+GET http://localhost:3003/user/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg0ZmVkZGZkLTIyYmQtNDllYy05Mjc2LTczZDEyYmU4ODdkMSIsInJvbGVzIjoiTk9STUFMIiwiaWF0IjoxNjYzMjY0MzA5LCJleHAiOjE2NjMzNTA3MDl9.y74s-Hu_XLWr0_eFLg7q2YGwEKwKaJtTSZnrZbvntXs
+
+###
+//busca por id
+GET http://localhost:3003/user/3062eabb-13af-491a-a929-8842c023672b
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE3NzE1MDdiLWJlNTctNGIxNi04NWU0LThkZTIwNTg4MGEzYSIsInJvbGVzIjoiQURNSU4iLCJpYXQiOjE2NjMyNDg1ODEsImV4cCI6MTY2MzMzNDk4MX0.yy0mpdug1QYbbLFcpK24jg0qrFz6WdO_ntvel3HZmo0
+
+###
+//deletar conta
+DELETE  http://localhost:3003/delete
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE3NzE1MDdiLWJlNTctNGIxNi04NWU0LThkZTIwNTg4MGEzYSIsInJvbGVzIjoiQURNSU4iLCJpYXQiOjE2NjMyNDg1ODEsImV4cCI6MTY2MzMzNDk4MX0.yy0mpdug1QYbbLFcpK24jg0qrFz6WdO_ntvel3HZmo0
+
+
