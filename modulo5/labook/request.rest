@@ -1,0 +1,52 @@
+// usuario
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+   "name":"Maria",
+   "email":"ma@gmail.com",
+   "password":"jaja12"
+}
+
+###
+
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+   "email":"igor@gmail.com",
+   "password":"jaja12"
+}
+
+### POST -------------------------------------------------
+// create
+POST http://localhost:3003/post/create
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJlNDZhMWRhLTI2OGMtNGM2My1hNWMyLWYzYWFjOGIzM2YwOCIsImlhdCI6MTY2Mzc4ODcyNCwiZXhwIjoxNjYzODc1MTI0fQ.j9Swm7F4kZ-CSyIGwIwtnWMvs-5eu348gCp4Ct8oKQU
+Content-Type: application/json
+
+{
+   "photo":"https://s1.static.brasilescola.uol.com.br",
+   "description":"Lindo dia",
+   "type":"NORMAL"
+}
+
+###
+//get post by id
+GET http://localhost:3003/post/7d5769ae-befe-4f3e-b6c6-6bf2f4189767
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NGY4MjA5LTM0NDItNDI3OS05ZTgwLTE2N2ZmNzVkMDI0MCIsImlhdCI6MTY2Mzc5NDkyNSwiZXhwIjoxNjYzODgxMzI1fQ.Fy531b1WCKRpTKWfs6Zzrd0q7zADehMbEmw6WVbkyHw
+
+
+### Friends --------------------------------------------------------------
+// cria nova amizade 
+POST  http://localhost:3003/friends/done
+Content-Type: application/json
+
+{
+   "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NGY4MjA5LTM0NDItNDI3OS05ZTgwLTE2N2ZmNzVkMDI0MCIsImlhdCI6MTY2MzgwMjUyOSwiZXhwIjoxNjYzODg4OTI5fQ.BEHkCq6RgV7tFDSxYSGLzWMy5C5OgMkaRCIDJeVU8iE",
+   "id":"8f457410-dc24-4816-a3bf-07ed5a901a96"
+}
+
+### 
+// deleta amizade
+DELETE   http://localhost:3003/friends/undone/8f457410-dc24-4816-a3bf-07ed5a901a96
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NGY4MjA5LTM0NDItNDI3OS05ZTgwLTE2N2ZmNzVkMDI0MCIsImlhdCI6MTY2MzgwMjUyOSwiZXhwIjoxNjYzODg4OTI5fQ.BEHkCq6RgV7tFDSxYSGLzWMy5C5OgMkaRCIDJeVU8iE
