@@ -3,9 +3,10 @@ POST http://localhost:3003/user/signup
 Content-Type: application/json
 
 {
-   "name":"Maria",
-   "email":"ma@gmail.com",
-   "password":"jaja12"
+   "name":"FELIPE",
+   "email":"Felipe@gmail.com",
+   "password":"jaja12",
+   "roles":"NORMAL"
 }
 
 ###
@@ -14,7 +15,7 @@ POST http://localhost:3003/user/login
 Content-Type: application/json
 
 {
-   "email":"igor@gmail.com",
+   "email":"Felipe@gmail.com",
    "password":"jaja12"
 }
 
@@ -25,9 +26,7 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJlNDZhMWRhLTI2OGMt
 Content-Type: application/json
 
 {
-   "photo":"https://s1.static.brasilescola.uol.com.br",
-   "description":"Lindo dia",
-   "type":"NORMAL"
+   "content":"dia lindo "
 }
 
 ###

@@ -1,16 +1,14 @@
-import { OCreatePostDTO, Post } from "../models/Post"
+import { IPostDb, OCreatePostDTO, Post } from "../models/Post"
 import {DataBase} from "./DataBase"
 
 export class PostData extends DataBase {
     protected TABLE_NAME = "Post_labook"
     Create = async (input:Post) => {
-        const userDB:OCreatePostDTO = {
+        const userDB:IPostDb = {
             id:input.getId(),
-            photo:input.getPhoto(),
-            description:input.getDescription(),
+            content:input.getContent(),
             create_date:input.getCreateDate(),
-            type_post:input.getTypePost(),
-            user_id:input.getUserId()
+            user_id:input.getUserId(),
         }
         await this.getConnection()
         .from(this.TABLE_NAME)

@@ -1,4 +1,5 @@
 export interface AuthenticationData{
-    id: string
+    id: string,
+    roles:string
 
  }

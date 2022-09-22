@@ -14,15 +14,15 @@ export class UserBusinnes {
   ) {}
 
   signupBusinnes = async (input: ISignupDTO) => {
-    const { name, email, password } = input;
+    const { name, email, password,roles } = input;
 
     const validEmail = await this.userData.getUserByEmail(email);
     console.log(name, email);
 
-    if (!name || !email || !password) {
+    if (!name || !email || !password || !roles) {
       throw new CustomError(422, "Digite os parametros necessarios");
     }
-    if (!email.includes("@") || !email.includes(".com") || !email.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/) ) {
+    if (!email.includes("@") || !email.includes(".com") || !email.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/) || typeof(email)!== "string" ) {
       throw new CustomError(422, "Formato de email invalido");
     }
     if (validEmail.length > 0) {
@@ -31,12 +31,15 @@ export class UserBusinnes {
     if (password.length < 6 || typeof(password)!== "string") {
       throw new CustomError(422,"erro, Digite pasword tipo (string) e com no minimo 6 digitos");
     }
+    if(name.length < 3 || typeof(name)!== "string"){
+      throw new CustomError(422,"name invalido :(string com no minimo 3 caracteries")
+    }
     const id = this.generateId.generateId();
     const newPassword = await this.hash.hash(password);
-    const newUser = new User(id, name, email, newPassword);
+    const newUser = new User(id, name, email, newPassword,roles);
     await this.userData.signup(newUser);
 
-    const token = this.authenticator.generateToken({ id });
+    const token = this.authenticator.generateToken({ id,roles });
 
     return token;
   };
@@ -64,7 +67,7 @@ export class UserBusinnes {
     if (!validPassword) {
       throw new CustomError(401, "senha invalida");
     }
-    const token = this.authenticator.generateToken({ id: validUser.id });
+    const token = this.authenticator.generateToken({ id: validUser.id,roles:validUser.roles });
 
     return token;
   };

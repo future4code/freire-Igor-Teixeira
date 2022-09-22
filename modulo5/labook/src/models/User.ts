@@ -1,8 +1,12 @@
-
+export enum ROLE {
+  ADMIN = "ADMIN”",
+  NORMAL = "NORMAL"
+}
 export interface ISignupDTO{
   name:string,
   email:string,
-  password:string
+  password:string,
+  roles:string
 }
 
 export interface ILoginDTO{
@@ -13,7 +17,8 @@ export interface ILoginDTO{
 export interface OUserDTO{
   id:string,
   name:string,
-  email:string
+  email:string,
+  roles:string
   
 }
 export interface InputDTO {
@@ -28,6 +33,8 @@ export class User {
       private name: string,
       private email: string,
       private password: string,
+      private roles:string
+
 
     ) {}
     getId() {
@@ -44,6 +51,9 @@ export class User {
   
     getPassword() {
       return this.password;
+    }
+    getRole() {
+      return this.roles;
     }
 
   }

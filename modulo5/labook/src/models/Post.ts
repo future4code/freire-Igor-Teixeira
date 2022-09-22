@@ -1,50 +1,44 @@
-export enum TYPEPOST {
-    EVENTO = "EVENTO",
-    NORMAL = "NORMAL",
-  }
 
   export interface ICreatePostDTO{
-     photo:string,
-     description:string,
-     createDate:string,
-     type:TYPEPOST 
+    content:string,
   }
+
+  export interface IPostDb{
+    id:string,
+    content:string,
+    create_date:string,
+    user_id:string,
+ }
+
+
 
   export interface OCreatePostDTO{
     id:string,
-    photo:string,
-    description:string,
+    content:string,
     create_date:string,
-    type_post:TYPEPOST,
-    user_id:string 
+    user_id:string,
+    likes?:number 
  }
 
   export class Post{
     constructor(
     private id:string,
-    private photo:string,
-    private description:string,
+    private content:string,
     private createDate:string,
-    private typePost:TYPEPOST,
-    private userId:string
+    private userId:string, 
     ) {}
 
     getId(){
         return this.id
     }
-    getPhoto(){
-        return this.photo
-    }
-    getDescription(){
-        return this.description
+    getContent(){
+        return this.content
     }
     getCreateDate(){
         return this.createDate
     }
-    getTypePost(){
-        return this.typePost
-    }
     getUserId(){
         return this.userId
     }
+
   }
