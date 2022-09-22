@@ -3,10 +3,10 @@ POST http://localhost:3003/user/signup
 Content-Type: application/json
 
 {
-   "name":"FELIPE",
-   "email":"Felipe@gmail.com",
+   "name":"ADM",
+   "email":"ADM@gmail.com",
    "password":"jaja12",
-   "roles":"NORMAL"
+   "roles":"ADIMIN"
 }
 
 ###
@@ -15,24 +15,49 @@ POST http://localhost:3003/user/login
 Content-Type: application/json
 
 {
-   "email":"Felipe@gmail.com",
+   "email":"ma@gmail.com",
    "password":"jaja12"
 }
 
 ### POST -------------------------------------------------
 // create
 POST http://localhost:3003/post/create
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJlNDZhMWRhLTI2OGMtNGM2My1hNWMyLWYzYWFjOGIzM2YwOCIsImlhdCI6MTY2Mzc4ODcyNCwiZXhwIjoxNjYzODc1MTI0fQ.j9Swm7F4kZ-CSyIGwIwtnWMvs-5eu348gCp4Ct8oKQU
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNGI3MzE2LWJjODYtNDYzYi04MmQ4LThmZjk4MTU5YTU4YiIsImlhdCI6MTY2Mzg3MTEzNywiZXhwIjoxNjYzOTU3NTM3fQ.uHvUjcL42_UiLHW6xuoKEXHCz7lb9ocj8dOvEZ5HTJw
 Content-Type: application/json
 
 {
-   "content":"dia lindo "
+   "content":"labenuuuu"
 }
 
 ###
 //get post by id
-GET http://localhost:3003/post/7d5769ae-befe-4f3e-b6c6-6bf2f4189767
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NGY4MjA5LTM0NDItNDI3OS05ZTgwLTE2N2ZmNzVkMDI0MCIsImlhdCI6MTY2Mzc5NDkyNSwiZXhwIjoxNjYzODgxMzI1fQ.Fy531b1WCKRpTKWfs6Zzrd0q7zADehMbEmw6WVbkyHw
+GET http://localhost:3003/post/f5e32ce6-4824-4c5f-9077-760bad836517
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2YzZmNzE5LWU3OWYtNDU0NC04ZWJkLThhMzJjNTg2YzFlMiIsInJvbGVzIjoiTk9STUFMIiwiaWF0IjoxNjYzODU0MDMwLCJleHAiOjE2NjM5NDA0MzB9.QZSxDol-QlqcuKZuR_fbXNe1tS8PvzGS6VCDdIb4Hrw
+
+###
+
+GET http://localhost:3003/post/feed
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2YzZmNzE5LWU3OWYtNDU0NC04ZWJkLThhMzJjNTg2YzFlMiIsInJvbGVzIjoiTk9STUFMIiwiaWF0IjoxNjYzODU0MDMwLCJleHAiOjE2NjM5NDA0MzB9.QZSxDol-QlqcuKZuR_fbXNe1tS8PvzGS6VCDdIb4Hrw
+
+###
+
+
+DELETE  http://localhost:3003/post/delete/8c4c0f0f-a09e-4001-ae7d-e5599a26f2c0
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJlM2Q1MWI0LTNkZGUtNGRjMi1iMTU3LTNjNjJjOThjZjc0MCIsInJvbGVzIjoiQURJTUlOIiwiaWF0IjoxNjYzODY2MzMyLCJleHAiOjE2NjM5NTI3MzJ9.i62QRr51dbry0tpZZg7B1HkfHOj5O21jf-lQv0mpSm4
+
+### Likes -----------------------------------------------------------
+POST   http://localhost:3003/posts/like
+Content-Type: application/json
+
+{
+   "id":"054e7163-881d-4765-ae49-9d2f2f60aa5a",
+   "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2YzZmNzE5LWU3OWYtNDU0NC04ZWJkLThhMzJjNTg2YzFlMiIsInJvbGVzIjoiTk9STUFMIiwiaWF0IjoxNjYzODU0MDMwLCJleHAiOjE2NjM5NDA0MzB9.QZSxDol-QlqcuKZuR_fbXNe1tS8PvzGS6VCDdIb4Hrw"
+}
+
+###
+DELETE http://localhost:3003/posts/dislike/054e7163-881d-4765-ae49-9d2f2f60aa5a
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2YzZmNzE5LWU3OWYtNDU0NC04ZWJkLThhMzJjNTg2YzFlMiIsInJvbGVzIjoiTk9STUFMIiwiaWF0IjoxNjYzODU0MDMwLCJleHAiOjE2NjM5NDA0MzB9.QZSxDol-QlqcuKZuR_fbXNe1tS8PvzGS6VCDdIb4Hrw
+
 
 
 ### Friends --------------------------------------------------------------
@@ -41,11 +66,11 @@ POST  http://localhost:3003/friends/done
 Content-Type: application/json
 
 {
-   "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NGY4MjA5LTM0NDItNDI3OS05ZTgwLTE2N2ZmNzVkMDI0MCIsImlhdCI6MTY2MzgwMjUyOSwiZXhwIjoxNjYzODg4OTI5fQ.BEHkCq6RgV7tFDSxYSGLzWMy5C5OgMkaRCIDJeVU8iE",
-   "id":"8f457410-dc24-4816-a3bf-07ed5a901a96"
+   "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgyOWQyYzJlLTc3ZGUtNGQ2OS05OWYzLTc2YjBiZWFlM2Q3MSIsImlhdCI6MTY2Mzg1NjE4MCwiZXhwIjoxNjYzOTQyNTgwfQ.32pRIaO7-jmaQx4_9i-Hy5bvOCmcmLUweKUlCTN315c",
+   "id":"614b7316-bc86-463b-82d8-8ff98159a58b"
 }
 
 ### 
 // deleta amizade
-DELETE   http://localhost:3003/friends/undone/8f457410-dc24-4816-a3bf-07ed5a901a96
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NGY4MjA5LTM0NDItNDI3OS05ZTgwLTE2N2ZmNzVkMDI0MCIsImlhdCI6MTY2MzgwMjUyOSwiZXhwIjoxNjYzODg4OTI5fQ.BEHkCq6RgV7tFDSxYSGLzWMy5C5OgMkaRCIDJeVU8iE
+DELETE   http://localhost:3003/friends/undone/614b7316-bc86-463b-82d8-8ff98159a58b
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgyOWQyYzJlLTc3ZGUtNGQ2OS05OWYzLTc2YjBiZWFlM2Q3MSIsImlhdCI6MTY2Mzg1NjE4MCwiZXhwIjoxNjYzOTQyNTgwfQ.32pRIaO7-jmaQx4_9i-Hy5bvOCmcmLUweKUlCTN315c

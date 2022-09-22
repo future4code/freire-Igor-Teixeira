@@ -4,10 +4,7 @@ import { UserBusinnes } from "../businnes/UserBusinnes";
 import { ILoginDTO, ISignupDTO } from "../models/User";
 
 export class UserController {
-  constructor(
-    private userBusinnes: UserBusinnes,
-
-    ) {}
+  constructor(private userBusinnes: UserBusinnes) {}
 
   signup = async (req: Request, res: Response) => {
     try {

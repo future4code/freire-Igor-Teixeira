@@ -2,6 +2,11 @@
   export interface ICreatePostDTO{
     content:string,
   }
+  
+  export interface InputDTO {
+    token:string,
+    id:string
+  }
 
   export interface IPostDb{
     id:string,

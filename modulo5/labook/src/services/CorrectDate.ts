@@ -1,13 +1,17 @@
 export class CorrectDate {
+  public sendDateToDB = (date: string) => {
+    let newDate = date.split("/");
+    return `${newDate[2]}-${newDate[1]}-${newDate[0]}`;
+  };
 
-    public sendDateToDB = (date: string) => {
-        let newDate = date.split('/')
-        return `${newDate[2]}-${newDate[1]}-${newDate[0]}`
-    }
-
-    public currentDateFormatted = (date: string) => {
-        let newDate: Date = new Date(date)
-        const newFormattedDate: string = ((newDate.getDate())) + "/" + ((newDate.getMonth() + 1)) + "/" + newDate.getFullYear()
-        return newFormattedDate
-    }
+  public currentDateFormatted = (date: string) => {
+    let newDate: Date = new Date(date);
+    const newFormattedDate: string =
+      newDate.getDate() +
+      "/" +
+      (newDate.getMonth() + 1) +
+      "/" +
+      newDate.getFullYear();
+    return newFormattedDate;
+  };
 }

@@ -7,7 +7,6 @@ import { Autheticator } from "../services/Authenticator";
 import { CorrectDate } from "../services/CorrectDate";
 import { GenerateId } from "../services/GenerateId";
 
-
 export const postRouter = Router()
 
 const postController = new PostController(
@@ -22,7 +21,11 @@ const postController = new PostController(
 
 postRouter.post("/create",postController.createPost)
 
+postRouter.get("/feed",postController.getFeed)
+
+postRouter.delete("/delete/:id",postController.deletePost)
+
 postRouter.get("/:id",postController.getPostById)
 
-postRouter.get("/feed",postController.getFeed)
+
 
