@@ -1,0 +1,30 @@
+POST  http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+   "name":"goten",
+   "email":"goten@gmail.com",
+   "password":"123456",
+   "role":"ADMIN"
+  
+}
+
+###
+// login
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+   "email":"igor@gmail.com",
+   "password":"123456"
+}
+
+
+
+###
+GET http://localhost:3003/user/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImUxMmZiYjNkLTMyNzAtNGFjNS04OTA3LTlmNTI0MWMwYzY1MyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2MzYxNjkwNSwiZXhwIjoxNjYzNzAzMzA1fQ.baMugm02EPQ4f1L6aEBVx7WG5OJVcMebv0dI3UtRvKM
+
+###
+DELETE  http://localhost:3003/user/delete/c7dfdaf4-d9bd-4bf8-947b-3bb65cd7f982
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImUxMmZiYjNkLTMyNzAtNGFjNS04OTA3LTlmNTI0MWMwYzY1MyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2MzYxNjgyNCwiZXhwIjoxNjYzNzAzMjI0fQ.TeoA1QNAqN_ni6Y3Qs_ET0m7RDYFh1-jAg_7p9wFGeA
