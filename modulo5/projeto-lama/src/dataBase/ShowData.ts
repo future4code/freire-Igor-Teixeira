@@ -2,10 +2,10 @@ import { OShowDTO, Show } from "../models/Show";
 import { DataBase } from "./DataBase";
 
 export class ShowData extends DataBase {
-  protected TABLE_SHOWS = "Show_lama";
+  public static TABLE_SHOWS = "Show_lama";
 
   createShowDb = async (input: Show): Promise<string> => {
-    await this.getConnection().from(this.TABLE_SHOWS).insert({
+    await this.getConnection().from(ShowData.TABLE_SHOWS).insert({
       id: input.getId(),
       band: input.getBand(),
       starts_at: input.getStarts(),
@@ -14,16 +14,16 @@ export class ShowData extends DataBase {
     return "Show created successfully";
   };
 
-  getShowPublic = async () => {
-    const result = await this.getConnection()
-      .from(this.TABLE_SHOWS)
+  getShowPublic = async (): Promise<OShowDTO[] | undefined> => {
+    const result: OShowDTO[] = await this.getConnection()
+      .from(ShowData.TABLE_SHOWS)
       .select("*");
     return result;
   };
 
-  getShowIdDb = async (input: string) => {
-    const result = await this.getConnection()
-      .from(this.TABLE_SHOWS)
+  getShowIdDb = async (input: string): Promise<OShowDTO[] | undefined> => {
+    const result: OShowDTO[] = await this.getConnection()
+      .from(ShowData.TABLE_SHOWS)
       .select("*")
       .where("id", `${input}`);
     return result;

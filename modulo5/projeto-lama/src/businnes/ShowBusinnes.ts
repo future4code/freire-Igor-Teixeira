@@ -60,7 +60,6 @@ export class ShowBusinnes {
 
     const shows = response.map((showDB) => {
       const newTiquet = ticket.filter((tiquetDB) => {
-        console.log(tiquetDB.show_id);
         return showDB.id === tiquetDB.show_id;
       });
       const dateCorrect = new CorrectDate().currentDateFormatted(

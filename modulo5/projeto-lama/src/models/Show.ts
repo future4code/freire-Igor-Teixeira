@@ -10,6 +10,13 @@ export interface OShowDTO{
     tickets:number,
 }
 
+export interface IShowDTO{
+  id: string,
+  starts_at: string,
+  band: string,
+  tickets:number,
+}
+
 
 
 export class Show {

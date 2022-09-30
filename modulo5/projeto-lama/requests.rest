@@ -33,7 +33,7 @@ DELETE  http://localhost:3003/ticket/delete/c8f83713-90b8-4b0c-bf9e-de34c90375eb
 Authorization: {{login.response.body.Token}}
 
 
-### SHOW ---------------------------------------------------------------
+### SHOW ------------------------------------------------------
 
 POST http://localhost:3003/show/create
 Content-Type: application/json
