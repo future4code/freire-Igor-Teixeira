@@ -50,3 +50,9 @@ Suas principais funcionalidades são: Cadastrar usuario, criar um novo show, vis
 
 ### Documentação do Postaman
 
+https://documenter.getpostman.com/view/21555253/2s83tCLZAa
+
+### Link Heroku
+
+https://musical-awards.herokuapp.com/
+
