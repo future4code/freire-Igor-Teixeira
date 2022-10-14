@@ -1,0 +1,50 @@
+// USUARIO
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+   "name":"igor",
+   "email":"igor@gmail.com",
+   "password":"123456",
+   "roles": "ADMIN"  
+}
+
+###
+# @name login
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+   "email":"igor@gmail.com",
+   "password":"123456"
+}
+
+### tickets --------------------------------------
+POST http://localhost:3003/ticket/create
+Content-Type: application/json
+Authorization: {{login.response.body.Token}}
+
+{
+   "showId":"c8f83713-90b8-4b0c-bf9e-de34c90375eb"
+}
+
+### 
+DELETE  http://localhost:3003/ticket/delete/c8f83713-90b8-4b0c-bf9e-de34c90375eb
+Authorization: {{login.response.body.Token}}
+
+
+### SHOW ------------------------------------------------------
+
+POST http://localhost:3003/show/create
+Content-Type: application/json
+Authorization: {{login.response.body.Token}}
+
+{
+   "starts":"08/12/2022",
+   "band":"engenheiros do havai"
+}
+
+###
+GET http://localhost:3003/show/
+
+
