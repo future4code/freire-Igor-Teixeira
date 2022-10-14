@@ -5,6 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import megasena from "../../assets/sena.png";
 import { GlobalStateContext } from "../../Global/GlobalStateContext";
 import axios from "axios";
+import {returnColor} from "../../contantes/ReturnColor"
 
 export const Sidebar = (props) => {
   const { contest, setContest, loader, setLoader } = useContext(GlobalStateContext);
@@ -69,7 +70,7 @@ export const Sidebar = (props) => {
       >
         <path
           d="M613 0C613 0 361.26 501.011 613 1080H0V0H613Z"
-          fill="#6BEFA3"
+          fill={returnColor(name)}
         />
       </svg>
       :
